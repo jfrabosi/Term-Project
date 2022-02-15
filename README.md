@@ -1,8 +1,8 @@
 # Project Proposal
 The project our team is planning on developing is a pancake plotter. This system uses a 2.5 axis CNC system to interpret code and plot the batter on a griddle. 
 The batter is contained in a 500 mL syringe which is moved along a radial arm via a motor belt system. The raidial arm is mounted to a second motor
-which can rotate -90 to 90 degrees. To reduce the amount of stress on the second motor, a semi-circle will be used to support the end of the radial 
-arm. We plan to fabricate this system by using 80/20 1" tubing as the structure, using a gridle as a bed, using 3D-printed parts as mount, and
+which can rotate from -90 to 90 degrees. To reduce the amount of stress on the second motor, a semi-circle will be used to support the end of the radial 
+arm. We plan to fabricate the entire system by using 80/20 1" tubing as the structure, using a gridle as a bed, using 3D-printed parts as mount, and
 using laser-cut plywood for the semi-circular support.
 
 | Qty. | Part                  | Source                | Est. Cost |
