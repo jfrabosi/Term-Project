@@ -2,8 +2,8 @@
 The project our team is planning on developing is a pancake plotter. This system uses a 2.5 axis CNC system to interpret code and plot the batter on a griddle. 
 The batter is contained in a 500 mL syringe which is moved along a radial arm via a motor belt system. The raidial arm is mounted to a second motor
 which can rotate from -90 to 90 degrees. To reduce the amount of stress on the second motor, a semi-circle will be used to support the end of the radial 
-arm. We plan to fabricate the entire system by using 80/20 1" tubing as the structure, using a gridle as a bed, using 3D-printed parts as mount, and
-using laser-cut plywood for the semi-circular support. Sketches and a gif of our system design can be seen in the figures below.
+arm. We plan to fabricate the entire system by using 80/20 1" tubing as the structure, using a gridle as a bed, using 3D-printed parts as mounts, and
+using laser-cut plywood for the semi-circular support. A bill of materials, breaking down cost, as well as sketches and a gif of our system design can be seen in the figures below.
 
 | Qty. | Part                  | Source                | Est. Cost |
 |:----:|:----------------------|:----------------------|:---------:|
@@ -18,9 +18,11 @@ using laser-cut plywood for the semi-circular support. Sketches and a gif of our
 
 
 ![top down view](https://github.com/jfrabosi/Term-Project/blob/main/docs/TopView.PNG)
+
 FIGURE 1. Top-Down View of our Overall System.
 
 
+![close-up](https://github.com/jfrabosi/Term-Project/blob/main/docs/MechanismUpClose.PNG)
 
 Figure 2. Close-Up View of our Extruder mechanism.
 
@@ -28,4 +30,5 @@ Figure 2. Close-Up View of our Extruder mechanism.
 
 
 ![gif of the assembly](https://github.com/jfrabosi/Term-Project/blob/main/docs/MechanismGif.gif)
+
 Figure 3. Gif of our Assembly Working
