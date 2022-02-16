@@ -17,9 +17,15 @@ using laser-cut plywood for the semi-circular support. Sketches and a gif of our
 |  3   | Motor Driver          | ME 405 Tub and Pololu |   $4.95   |
 
 
-!(top down view)[https://github.com/jfrabosi/Term-Project/blob/main/docs/TopView.PNG]
+![top down view](https://github.com/jfrabosi/Term-Project/blob/main/docs/TopView.PNG)
 FIGURE 1. Top-Down View of our Overall System.
 
+
+
 Figure 2. Close-Up View of our Extruder mechanism.
+
+
+
+
 ![gif of the assembly](https://github.com/jfrabosi/Term-Project/blob/main/docs/MechanismGif.gif)
 Figure 3. Gif of our Assembly Working
