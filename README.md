@@ -15,6 +15,9 @@ using laser-cut plywood for the semi-circular support. Sketches and a gif of our
 |  1   | Spool PLA Plastic     | Team's Supply         |     -     |
 |  1   | Sheet of Plywood      | Amazon                |   $24.00  |
 |  3   | Motor Driver          | ME 405 Tub and Pololu |   $4.95   |
+!(top down view)[https://github.com/jfrabosi/Term-Project/blob/main/docs/TopView.PNG]
+FIGURE 1. Top-Down View of our Overall System.
 
-FIGURE 1. 
+Figure 2. Close-Up View of our Extruder mechanism.
 ![gif of the assembly](https://github.com/jfrabosi/Term-Project/blob/main/docs/MechanismGif.gif)
+Figure 3. Gif of our Assembly Working
