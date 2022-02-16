@@ -15,3 +15,6 @@ using laser-cut plywood for the semi-circular support.
 |  1   | Spool PLA Plastic     | Team's Supply         |     -     |
 |  1   | Sheet of Plywood      | Amazon                |   $24.00  |
 |  3   | Motor Driver          | ME 405 Tub and Pololu |   $4.95   |
+
+
+![gif of the assembly](https://github.com/jfrabosi/Term-Project/blob/main/docs/MechanismGif.gif)
