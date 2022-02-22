@@ -1,5 +1,10 @@
 '''!
 
+@file                mainpage.py
+@brief               Brief doc for mainpage.py
+@details             Detailed doc for mainpage.py 
+
+
 @mainpage
 
 @section sec_1  SOFTWARE DESIGN
@@ -39,7 +44,7 @@
                 Once the desired coordinate is reached, a flag variable will be sent
                 out to the syringe motor task indicating it is ready for pancake
                 mix to be dispersed.
-            
+                
                 ## FSM?
                 
 @subsection     TRANSVERSE MOTOR TASK
