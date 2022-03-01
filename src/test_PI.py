@@ -9,7 +9,7 @@ from controller import PID
 
 moe = MotorDriver(pyb.Pin.cpu.A10, pyb.Pin.cpu.B4, pyb.Pin.cpu.B5, pyb.Timer(3, freq = 20000))
 enc = EncoderDriver(pyb.Pin.cpu.B6, pyb.Pin.cpu.B7, pyb.Timer(4, prescaler = 0, period = 65535))
-con = PID(5.5, 35, 0, 360)
+con = PID(5.5, 45, 0, 360)
 
 
 tran = [0, 100, 105, 110, 115, 120, 125]
@@ -26,7 +26,7 @@ def mot_trans():
             # might be better to use error instead of a set time since most coordintaes
             # will be continuous and this will speed up process
             # Might need a PID controller for better accuracy
-            while time <= 2500:
+            while time <= 2000:
                 con.ref(tran[idx])
                 start_time = utime.ticks_ms()
                 utime.sleep_ms(10)
