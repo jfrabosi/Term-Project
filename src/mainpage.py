@@ -13,7 +13,8 @@
                 Each subsection below describes a different component of the design,
                 explaining how and why we made the decisions that we did.
                 
-@subsection     GENERAL IDEA
+@subsection 1s1 
+                ##GENERAL IDEA
                 Our interpretation of a 2.5D plotter is a pancake plotter: a mechanism
                 that can convert G-Code of an image to carefully-positioned pancake
                 batter deposited onto a hot griddle, ideally making a pancake in the
@@ -39,7 +40,8 @@
                 Additionally, all CAD files can be found in the /docs/SOLIDWORKS directory
                 of this repository.
                 
-@subsection     GRIDDLE
+@subsection 1s2 
+                ##GRIDDLE
                 This is the most straight-forward component. In order to make pancakes,
                 you need a griddle or other hot-implement. Our team chose the griddle below,
                 purchased from Amazon for $27, due to its reasonable price and fast shipping
@@ -49,7 +51,8 @@
                 
                 There's really not much else for this one. It's a griddle.
 
-@subsection     SUPPORT STRUCTURE
+@subsection 1s3 
+                ##SUPPORT STRUCTURE
                 In order to effectively position and control our motors, our design first
                 needed a support structure. We designed the base of the support structure
                 from aluminum extrusions due to their versatility (used for both the
@@ -70,7 +73,8 @@
                 reduced our manufacturing time (as opposed to machining metal), and
                 allowed for rapid prototyping and design changes (of which there were many)!
 
-@subsection     BATTER DISPENSER
+@subsection 1s4 
+                ##BATTER DISPENSER
                 Time for moving parts!
                 
                 ## BATTER DISPENSER GIF
@@ -83,15 +87,20 @@
                 
                 ## LABELED DISPENSER IMAGE
 
-@subsection     TRANSVERSE MOTION
+@subsection 1s5 
+                ##TRANSVERSE MOTION
 
-@subsection     ROTATIONAL MOTION
+@subsection 1s6 
+                ##ROTATIONAL MOTION
 
-@subsection     LIMIT SWITCHES AND "ZEROING"
+@subsection 1s7 
+                ##LIMIT SWITCHES AND "ZEROING"
 
-@subsection     ELECTRONICS HOUSING
+@subsection 1s8 
+                ##ELECTRONICS HOUSING
 
-@subsection     BILL OF MATERIALS
+@subsection 1s9 
+                ##BILL OF MATERIALS
 
 @section sec_2  SOFTWARE DESIGN
                 This section will cover the tasks that we plan on utilizing for
@@ -106,7 +115,8 @@
                 ## Include picture of task diagram
                 
 
-@subsection     G-CODE TASK
+@subsection 2s1 
+                ##G-CODE TASK
                 The G-Code task will be responsible for the conversion a G-Code
                 into coordinates that can be used by our machine. This will be
                 accomplished by first converting the G-Code file into cartesian
@@ -118,7 +128,8 @@
                 
                 ## FSM?
                 
-@subsection     RADIAL MOTOR TASK
+@subsection 2s2 
+                ##RADIAL MOTOR TASK
                 The radial motor task will be responsible for the radial motion
                 of our nozzle. This task will function by taking the radial
                 coordinates from the G-Code task and using these values as refernece
@@ -133,7 +144,8 @@
                 
                 ## FSM?
                 
-@subsection     TRANSVERSE MOTOR TASK
+@subsection 2s3 
+                ##TRANSVERSE MOTOR TASK
                 The transverse motor task will be responsible for the transverse
                 motion of our nozzle. This task will function by taking the 
                 transverse coorinates coordinates from the G-Code task and using
@@ -147,7 +159,8 @@
                 
                 ## FSM?
                 
-@subsection     SYRINGE MOTOR TASK
+@subsection 2s4 
+                ##SYRINGE MOTOR TASK
                 The syringe motor task will be responsible for the dispersion
                 of the pancake mixture.
 '''

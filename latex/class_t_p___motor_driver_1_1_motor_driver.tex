@@ -1,0 +1,85 @@
+\hypertarget{class_t_p___motor_driver_1_1_motor_driver}{}\doxysection{TP\+\_\+\+Motor\+Driver.\+Motor\+Driver Class Reference}
+\label{class_t_p___motor_driver_1_1_motor_driver}\index{TP\_MotorDriver.MotorDriver@{TP\_MotorDriver.MotorDriver}}
+
+
+This class implements a motor driver for an ME405 project.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{class_t_p___motor_driver_1_1_motor_driver_a62be10656082e11881d47a3a3d9e4e5c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, en\+\_\+pin, in1pin, in2pin, timer)
+\begin{DoxyCompactList}\small\item\em Initializes motor object given I/O pins and a timer. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{class_t_p___motor_driver_1_1_motor_driver_a61abc3d71759cdff19a9d9ac0006da25}{set\+\_\+duty\+\_\+cycle}} (self, level)
+\begin{DoxyCompactList}\small\item\em Sets the duty cycle of the motor to the given level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_ad337e54a4f0a7fad58496eddf69f04cf}\label{class_t_p___motor_driver_1_1_motor_driver_ad337e54a4f0a7fad58496eddf69f04cf}} 
+{\bfseries en\+\_\+pin}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_a09d54606ef7574d52e1b8c87f9a758eb}\label{class_t_p___motor_driver_1_1_motor_driver_a09d54606ef7574d52e1b8c87f9a758eb}} 
+{\bfseries in1pin}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_a5328b1e46b73af2c0f62cad2a25a9b42}\label{class_t_p___motor_driver_1_1_motor_driver_a5328b1e46b73af2c0f62cad2a25a9b42}} 
+{\bfseries in2pin}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_a2f0eadd83aaab4ec4c17079f70d98e51}\label{class_t_p___motor_driver_1_1_motor_driver_a2f0eadd83aaab4ec4c17079f70d98e51}} 
+{\bfseries tim}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_ab88138d5a3c06fcca4590eebe0142e73}\label{class_t_p___motor_driver_1_1_motor_driver_ab88138d5a3c06fcca4590eebe0142e73}} 
+{\bfseries m\+Pos}
+\item 
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_af97bd21d1a0911a014339fd1a4b7dc2e}\label{class_t_p___motor_driver_1_1_motor_driver_af97bd21d1a0911a014339fd1a4b7dc2e}} 
+{\bfseries m\+Neg}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements a motor driver for an ME405 project. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_a62be10656082e11881d47a3a3d9e4e5c}\label{class_t_p___motor_driver_1_1_motor_driver_a62be10656082e11881d47a3a3d9e4e5c}} 
+\index{TP\_MotorDriver.MotorDriver@{TP\_MotorDriver.MotorDriver}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TP\_MotorDriver.MotorDriver@{TP\_MotorDriver.MotorDriver}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Motor\+Driver.\+Motor\+Driver.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{en\+\_\+pin,  }\item[{}]{in1pin,  }\item[{}]{in2pin,  }\item[{}]{timer }\end{DoxyParamCaption})}
+
+
+
+Initializes motor object given I/O pins and a timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en\+\_\+pin} & A pyb.\+Pin object for the EN/\+OCD \char`\"{}toggle\char`\"{} pin \\
+\hline
+{\em in1pin} & A pyb.\+Pin object for the IN1 pin (+) \\
+\hline
+{\em in2pin} & A pyb.\+Pin object for the IN2 pin (-\/) \\
+\hline
+{\em timer} & The number of the timer to be used by the motor \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_p___motor_driver_1_1_motor_driver_a61abc3d71759cdff19a9d9ac0006da25}\label{class_t_p___motor_driver_1_1_motor_driver_a61abc3d71759cdff19a9d9ac0006da25}} 
+\index{TP\_MotorDriver.MotorDriver@{TP\_MotorDriver.MotorDriver}!set\_duty\_cycle@{set\_duty\_cycle}}
+\index{set\_duty\_cycle@{set\_duty\_cycle}!TP\_MotorDriver.MotorDriver@{TP\_MotorDriver.MotorDriver}}
+\doxysubsubsection{\texorpdfstring{set\_duty\_cycle()}{set\_duty\_cycle()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Motor\+Driver.\+Motor\+Driver.\+set\+\_\+duty\+\_\+cycle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets the duty cycle of the motor to the given level. 
+
+Positive values cause torque in one direction, negative values cause torque in opposite direction. 
+\begin{DoxyParams}{Parameters}
+{\em level} & Duty cycle value between -\/100 and 100 \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TP\+\_\+\+Motor\+Driver.\+py\end{DoxyCompactItemize}

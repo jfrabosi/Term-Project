@@ -1,0 +1,110 @@
+\hypertarget{class_t_p___closed_loop_1_1_closed_loop}{}\doxysection{TP\+\_\+\+Closed\+Loop.\+Closed\+Loop Class Reference}
+\label{class_t_p___closed_loop_1_1_closed_loop}\index{TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_ac19a6424b6330b937a4d58456c7bb67a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_adb748f706ffa337fb0e422e803679602}{Kp}})
+\begin{DoxyCompactList}\small\item\em Creates a speed controller object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_a034c0781c9e6055e91dab5a1283920e8}{update}} (self, w\+Ref, w\+Calc, time=0, save\+Data=False)
+\begin{DoxyCompactList}\small\item\em Updates the current duty cycle value for a motor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_a24f166256596d97c122a293c7c833457}{set\+Kp}} (self, \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_adb748f706ffa337fb0e422e803679602}{Kp}})
+\begin{DoxyCompactList}\small\item\em Sets the value of Kp. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{class_t_p___closed_loop_1_1_closed_loop_ad6ad9a42c56f296083c0ba5e0efe03c8}{get\+Kp}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current value of Kp. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_a768c66889a82bce8b317ee529dd1b9b0}\label{class_t_p___closed_loop_1_1_closed_loop_a768c66889a82bce8b317ee529dd1b9b0}} 
+def {\bfseries clear\+Results} (self)
+\begin{DoxyCompactList}\small\item\em Clears the values of time\+Vals, meas\+Vals, and ref\+Vals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_adb748f706ffa337fb0e422e803679602}\label{class_t_p___closed_loop_1_1_closed_loop_adb748f706ffa337fb0e422e803679602}} 
+{\bfseries Kp}
+\begin{DoxyCompactList}\small\item\em Value of Kp. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_a2f3a710f086834b3fb6da89853c84edf}\label{class_t_p___closed_loop_1_1_closed_loop_a2f3a710f086834b3fb6da89853c84edf}} 
+{\bfseries l\+Act}
+\begin{DoxyCompactList}\small\item\em Duty cycle value (L\+\_\+actual) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_af48679836f7fcf7271a4d1ae7a716b90}\label{class_t_p___closed_loop_1_1_closed_loop_af48679836f7fcf7271a4d1ae7a716b90}} 
+{\bfseries time\+Vals}
+\begin{DoxyCompactList}\small\item\em List for time value storage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_af507a9f730cce71e4af911e4e9a2d018}\label{class_t_p___closed_loop_1_1_closed_loop_af507a9f730cce71e4af911e4e9a2d018}} 
+{\bfseries meas\+Vals}
+\begin{DoxyCompactList}\small\item\em List for measured position value storage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_af0778cc12bf25d87a1d90573c7559e96}\label{class_t_p___closed_loop_1_1_closed_loop_af0778cc12bf25d87a1d90573c7559e96}} 
+{\bfseries ref\+Vals}
+\begin{DoxyCompactList}\small\item\em List for reference position value storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_ac19a6424b6330b937a4d58456c7bb67a}\label{class_t_p___closed_loop_1_1_closed_loop_ac19a6424b6330b937a4d58456c7bb67a}} 
+\index{TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Closed\+Loop.\+Closed\+Loop.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Kp }\end{DoxyParamCaption})}
+
+
+
+Creates a speed controller object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & A value of Kp to use for speed control correction \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_ad6ad9a42c56f296083c0ba5e0efe03c8}\label{class_t_p___closed_loop_1_1_closed_loop_ad6ad9a42c56f296083c0ba5e0efe03c8}} 
+\index{TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}!getKp@{getKp}}
+\index{getKp@{getKp}!TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}}
+\doxysubsubsection{\texorpdfstring{getKp()}{getKp()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Closed\+Loop.\+Closed\+Loop.\+get\+Kp (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current value of Kp. 
+
+\begin{DoxyReturn}{Returns}
+Returns Kp 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_a24f166256596d97c122a293c7c833457}\label{class_t_p___closed_loop_1_1_closed_loop_a24f166256596d97c122a293c7c833457}} 
+\index{TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}!setKp@{setKp}}
+\index{setKp@{setKp}!TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}}
+\doxysubsubsection{\texorpdfstring{setKp()}{setKp()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Closed\+Loop.\+Closed\+Loop.\+set\+Kp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Kp }\end{DoxyParamCaption})}
+
+
+
+Sets the value of Kp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & The desired value of Kp \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_t_p___closed_loop_1_1_closed_loop_a034c0781c9e6055e91dab5a1283920e8}\label{class_t_p___closed_loop_1_1_closed_loop_a034c0781c9e6055e91dab5a1283920e8}} 
+\index{TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}!update@{update}}
+\index{update@{update}!TP\_ClosedLoop.ClosedLoop@{TP\_ClosedLoop.ClosedLoop}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Closed\+Loop.\+Closed\+Loop.\+update (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w\+Ref,  }\item[{}]{w\+Calc,  }\item[{}]{time = {\ttfamily 0},  }\item[{}]{save\+Data = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Updates the current duty cycle value for a motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w\+Ref} & The reference velocity that is being targeted \\
+\hline
+{\em w\+Calc} & The current measured velocity of the motor \\
+\hline
+{\em time} & The current time, used for plotting purposes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the updated duty cycle value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TP\+\_\+\+Closed\+Loop.\+py\end{DoxyCompactItemize}

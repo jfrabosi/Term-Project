@@ -1,0 +1,84 @@
+\hypertarget{class_t_p___encoder_class_1_1_encoder_class}{}\doxysection{TP\+\_\+\+Encoder\+Class.\+Encoder\+Class Class Reference}
+\label{class_t_p___encoder_class_1_1_encoder_class}\index{TP\_EncoderClass.EncoderClass@{TP\_EncoderClass.EncoderClass}}
+
+
+This class implements a motor driver for an ME405 project.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{class_t_p___encoder_class_1_1_encoder_class_a7dc8c348401e30f419050eacfad11115}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, in1pin, in2pin, timer)
+\begin{DoxyCompactList}\small\item\em Creates the encoder object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_ac408a2fd4d2e5036f942bc7914f62958}\label{class_t_p___encoder_class_1_1_encoder_class_ac408a2fd4d2e5036f942bc7914f62958}} 
+def {\bfseries zero} (self)
+\begin{DoxyCompactList}\small\item\em Sets the position of the encoder and the counter to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a5c11e988c24a1d00c505bbedef05c672}\label{class_t_p___encoder_class_1_1_encoder_class_a5c11e988c24a1d00c505bbedef05c672}} 
+def {\bfseries update} (self)
+\begin{DoxyCompactList}\small\item\em Updates the current position (in degrees) of the motor based on the last updated position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a8f3facf569b22abe5f54f7f73a91152d}\label{class_t_p___encoder_class_1_1_encoder_class_a8f3facf569b22abe5f54f7f73a91152d}} 
+{\bfseries period}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_ad7923b71123e859b51d03788fc2ab013}\label{class_t_p___encoder_class_1_1_encoder_class_ad7923b71123e859b51d03788fc2ab013}} 
+{\bfseries tim}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_afa81f163956fdf9cf7ba3bd1ffc1802e}\label{class_t_p___encoder_class_1_1_encoder_class_afa81f163956fdf9cf7ba3bd1ffc1802e}} 
+{\bfseries tch1}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a2422ba9b21fa194acb3a6556ac56c568}\label{class_t_p___encoder_class_1_1_encoder_class_a2422ba9b21fa194acb3a6556ac56c568}} 
+{\bfseries tch2}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_ab15fe197acd108a148d39204578265c3}\label{class_t_p___encoder_class_1_1_encoder_class_ab15fe197acd108a148d39204578265c3}} 
+{\bfseries pos}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a7fe463be11419b1484e3273a7af425ee}\label{class_t_p___encoder_class_1_1_encoder_class_a7fe463be11419b1484e3273a7af425ee}} 
+{\bfseries lastpos}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_ad2da55bb3d0af942b883c097b984508c}\label{class_t_p___encoder_class_1_1_encoder_class_ad2da55bb3d0af942b883c097b984508c}} 
+{\bfseries count}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a99c20c0f31400b5e268dd3de2c62a140}\label{class_t_p___encoder_class_1_1_encoder_class_a99c20c0f31400b5e268dd3de2c62a140}} 
+{\bfseries last\+Count}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a296d0377c2888d817cf0d9caebb9ea44}\label{class_t_p___encoder_class_1_1_encoder_class_a296d0377c2888d817cf0d9caebb9ea44}} 
+{\bfseries delta}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_afa9d63ac6c214f0a2ba96842f66f0a22}\label{class_t_p___encoder_class_1_1_encoder_class_afa9d63ac6c214f0a2ba96842f66f0a22}} 
+{\bfseries last\+Delta}
+\item 
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_afecc268cce44485eb2c2dc35e896ed90}\label{class_t_p___encoder_class_1_1_encoder_class_afecc268cce44485eb2c2dc35e896ed90}} 
+{\bfseries last\+Pos}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements a motor driver for an ME405 project. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_p___encoder_class_1_1_encoder_class_a7dc8c348401e30f419050eacfad11115}\label{class_t_p___encoder_class_1_1_encoder_class_a7dc8c348401e30f419050eacfad11115}} 
+\index{TP\_EncoderClass.EncoderClass@{TP\_EncoderClass.EncoderClass}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TP\_EncoderClass.EncoderClass@{TP\_EncoderClass.EncoderClass}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def TP\+\_\+\+Encoder\+Class.\+Encoder\+Class.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{in1pin,  }\item[{}]{in2pin,  }\item[{}]{timer }\end{DoxyParamCaption})}
+
+
+
+Creates the encoder object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in1pin} & A pyb.\+Pin object for the encoder channel A \\
+\hline
+{\em in2pin} & A pyb.\+Pin object for the encoder channel B \\
+\hline
+{\em timer} & The number of the timer to be used by the encoder \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+TP\+\_\+\+Encoder\+Class.\+py\end{DoxyCompactItemize}
