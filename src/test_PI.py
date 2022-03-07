@@ -11,14 +11,15 @@ trans_moe = MotorDriver(pyb.Pin.cpu.A10, pyb.Pin.cpu.B4, pyb.Pin.cpu.B5, pyb.Tim
 trans_enc = EncoderDriver(pyb.Pin.cpu.B6, pyb.Pin.cpu.B7, pyb.Timer(4, prescaler = 0, period = 65535))
 trans_con = PID(5.5, 45, 0, 0)
 
-rad_moe = MotorDriver(pyb.Pin.cpu.A10, pyb.Pin.cpu.B4, pyb.Pin.cpu.B5, pyb.Timer(3, freq = 20000))
-rad_enc = EncoderDriver(pyb.Pin.cpu.B6, pyb.Pin.cpu.B7, pyb.Timer(4, prescaler = 0, period = 65535))
+rad_moe = MotorDriver(pyb.Pin.cpu.A4, pyb.Pin.cpu.A0, pyb.Pin.cpu.A1, pyb.Timer(5, freq = 20000))
+rad_enc = EncoderDriver(pyb.Pin.cpu.C6, pyb.Pin.cpu.C7, pyb.Timer(8, prescaler = 0, period = 65535))
 rad_con = PID(5.5, 45, 0, 0)
 moe_diameter = 6.35 #mm
 
 
 tran = [0, 100, 105, 110, 115, 120, 125]
 radial = [0, 50, 100, 136, 110, 140, 60, 80, 35, 0, 65, 155, 200, 130]
+syringe = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1]
 trans_enc.zero()
 rad_enc.zero()
 
@@ -45,10 +46,11 @@ def transverse_motor():
                 trans_moe.set_duty_cycle(duty)
                 stop = utime.ticks_ms()
                 time = utime.ticks_diff(stop, start)
+                yield (0)
             time = 0
             start = stop
-            print('pos:', pos)
-            print('duty:', duty)
+            print('trans pos:', pos)
+            # print('duty:', duty)
         yield(0)
         
 def radial_motor():
@@ -56,7 +58,7 @@ def radial_motor():
     time = 0
     step_time = 0
     while True:
-        # trans_moe.set_duty_cycle(50)
+        # rad_moe.set_duty_cycle(50)
         for idx in range(0, len(radial)):
             # might be better to use error instead of a set time since most coordintaes
             # will be continuous and this will speed up process
@@ -73,26 +75,33 @@ def radial_motor():
                 rad_moe.set_duty_cycle(duty)
                 stop = utime.ticks_ms()
                 time = utime.ticks_diff(stop, start)
+                yield(0)
             time = 0
             start = stop
-            print('dist:', dist)
+            print('rad pos:', dist)
             # print('duty:', duty)
         yield(0)
 
         
-# def mot_syr():
-    
+def mot_syr():
+    while True:
+        for idx in range(0, len(syringe)):
+            if syringe[idx] == 1:
+                rad_moe.set_duty_cycle(30)
+            elif syringe[idx] == 0:
+                rad_moe.set_duty_cycle(0)
+        yield(0)
+                
 
 if __name__ == "__main__":
     
         task_0 = cotask.Task(radial_motor, name = 'Task_0', priority = 1, period = 10, profile=True, trace=False)
-        task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 2, period = 10, profile=True, trace=False)
+        task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 1, period = 10, profile=True, trace=False)
         
         cotask.task_list.append(task_0)
-        # cotask.task_list.append(task_1)
+        cotask.task_list.append(task_1)
         
         # Need to figure out how to move the encoder back to neutral position 
         # once done with operation
         while True:
-            # trans_moe.set_duty_cycle(50)
             cotask.task_list.pri_sched()
