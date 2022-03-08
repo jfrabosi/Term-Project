@@ -8,6 +8,7 @@ from motor_driver import MotorDriver
 from controller import PID
 from limit_switch import LimitSwitch
 from task_share import Share
+from gcode_convert import carttopolar
 
 moe_diameter = 0.366 #in
 
@@ -17,15 +18,15 @@ pinA1 = pyb.Pin(pyb.Pin.board.PA1, pyb.Pin.OUT_PP)
 pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
 pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
 pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
-pinB10 = pyb.Pin(pyb.Pin.board.PB10, pyb.Pin.OUT_PP)
+pinA9 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
 pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
 pinA6 = pyb.Pin(pyb.Pin.board.PA6, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
 pinB3 = pyb.Pin(pyb.Pin.board.PB3, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
-pinB9 = pyb.Pin(pyb.Pin.board.PB9, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
+pinA8 = pyb.Pin(pyb.Pin.board.PA8, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
 
 trans_moe = MotorDriver(pinC1, pinA0, pinA1, pyb.Timer(5, freq = 20000))
 rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
-ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(2, freq = 20000), 3, pinA7)
+ext_moe = MotorDriverExtrude(pinA9, pyb.Timer(1, freq = 20000), 2, pinA7)
 
 trans_enc = EncoderDriver(pyb.Pin.cpu.C6, pyb.Pin.cpu.C7, pyb.Timer(8, prescaler = 0, period = 65535), CPR = 8192*360/((22/7)*moe_diameter))
 trans_con = PID(7, 45, 0, 0)
@@ -38,13 +39,8 @@ ext_con = PID(5.5, 45, 0, 0)
 
 radSwitch = LimitSwitch(pinA6)
 transSwitch = LimitSwitch(pinB3)
-extSwitch = LimitSwitch(pinB9)
+extSwitch = LimitSwitch(pinA8)
 
-
-
-
-radial = [0, 30]
-transverse = [5, 10]
 trans_enc.zero()
 rad_enc.zero()
 
@@ -64,6 +60,12 @@ def transverse_switch():
             transSwitchFlag.put(1)
         yield
         
+def extrusion_switch():
+    extSwitchFlag.put(0)
+    while True:
+        if extSwitch.check():
+            extSwitchFlag.put(1)
+        yield
 
 def radial_motor():
     step_time = 0
@@ -79,7 +81,7 @@ def radial_motor():
         rad_moe.set_duty_cycle(50)
         yield (0)
     while not radSwitchFlag.get():
-        rad_moe.set_duty_cycle(-50)
+        rad_moe.set_duty_cycle(-100)
         yield(0)
     print('not!')
     rad_moe.set_duty_cycle(0)
@@ -94,6 +96,30 @@ def radial_motor():
     while True:
         # trans_moe.set_duty_cycle(50)
         for idx in range(0, len(radial)):
+#             if extSwitchFlag.get():
+#                 while abs(error) >= 5:
+#                     if error > 0:
+#                         rad_con.ref(-50)
+#                         start_time = utime.ticks_ms()
+#                         utime.sleep_ms(10)
+#                         pos = rad_enc.read()
+#                         stop_time = utime.ticks_ms()
+#                         step_time = utime.ticks_diff(stop_time, start_time)
+#                         error = rad_con.compute(pos, step_time/1000, save_data=False)
+#                         rad_moe.set_duty_cycle(50)
+#                     elif error < 0:
+#                         rad_con.ref(-50)
+#                         start_time = utime.ticks_ms()
+#                         utime.sleep_ms(10)
+#                         pos = rad_enc.read()
+#                         stop_time = utime.ticks_ms()
+#                         step_time = utime.ticks_diff(stop_time, start_time)
+#                         error = rad_con.compute(pos, step_time/1000, save_data=False)
+#                         rad_moe.set_duty_cycle(-50)
+#                     yield(0)
+#                 while True:
+#                     rad_moe.set_duty_cycle(1)
+#                     yield(0)
             # might be better to use error instead of a set time since most coordintaes
             # will be continuous and this will speed up process
             # Might need a PID controller for better accuracy
@@ -106,7 +132,7 @@ def radial_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = rad_con.compute(pos, step_time/1000, save_data=False)
-                    rad_moe.set_duty_cycle(50)
+                    rad_moe.set_duty_cycle(100)
                 elif error < 0:
                     rad_con.ref(radial[idx])
                     start_time = utime.ticks_ms()
@@ -115,13 +141,11 @@ def radial_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = rad_con.compute(pos, step_time/1000, save_data=False)
-                    rad_moe.set_duty_cycle(-50)
+                    rad_moe.set_duty_cycle(-100)
                 yield (0)
             rad_moe.set_duty_cycle(0)
             error = 10
             print('rad pos:', pos)
-            print('error:', error)
-            # print('duty:', duty)
             radFlag.put(1)
             while not transFlag.get() and radFlag.get():
                 rad_moe.set_duty_cycle(1)
@@ -135,7 +159,6 @@ def transverse_motor():
     step_time = 0
     error = 10
     while abs(error) >= 5:
-        print(error)
         trans_con.ref(-.25)
         start_time = utime.ticks_ms()
         utime.sleep_ms(10)
@@ -151,23 +174,46 @@ def transverse_motor():
     print('bot!')
     trans_moe.set_duty_cycle(0)
     transFlag.put(1)
-    trans_enc.setpos(11)
+    trans_enc.setpos(14.5)
     pos = trans_enc.read()
     while not radFlag.get():
         trans_moe.set_duty_cycle(1)
         yield(0)
     transSwitchFlag.put(0)
     radFlag.put(0)
+    extFlag.put(1)
     while True:
 #         trans_moe.set_duty_cycle(50)
         for idx in range(0, len(transverse)):
+#             if extSwitchFlag.get():
+#                 while abs(error) >= 5:
+#                     if error > 0: 
+#                         trans_con.ref(7)
+#                         start_time = utime.ticks_ms()
+#                         utime.sleep_ms(10)
+#                         pos = trans_enc.read()
+#                         stop_time = utime.ticks_ms()
+#                         step_time = utime.ticks_diff(stop_time, start_time)
+#                         error = trans_con.compute(pos, step_time/1000, save_data=False)
+#                         trans_moe.set_duty_cycle(-100)
+#                     elif error < 0:
+#                         trans_con.ref(7)
+#                         start_time = utime.ticks_ms()
+#                         utime.sleep_ms(10)
+#                         pos = trans_enc.read()
+#                         stop_time = utime.ticks_ms()
+#                         step_time = utime.ticks_diff(stop_time, start_time)
+#                         error = trans_con.compute(pos, step_time/1000, save_data=False)
+#                         trans_moe.set_duty_cycle(100)
+#                     yield(0)
+#                 while True:
+#                     trans_moe.set_duty_cycle(1)
+#                     yield(0)
+            index.put(idx)
             # might be better to use error instead of a set time since most coordintaes
             # will be continuous and this will speed up process
             # Might need a PID controller for better accuracy
             while abs(error) >= 5:
-                print(error)
-                print(pos)
-                print('----')
                 if error > 0: 
                     trans_con.ref(transverse[idx])
                     start_time = utime.ticks_ms()
@@ -188,8 +234,6 @@ def transverse_motor():
                     trans_moe.set_duty_cycle(100)
                 yield(0)
             trans_moe.set_duty_cycle(0)
-            print('tran pos:', pos)
-            print('error:', error)
             error = 10
             transFlag.put(1)
             while not radFlag.get() and transFlag.get():
@@ -199,7 +243,37 @@ def transverse_motor():
             transFlag.put(0)
         yield(0)
         
-# def mot_syr():
+def extrusion_motor():
+    ext_moe.set_duty_cycle(1)
+    while not extFlag.get():
+        ext_moe.set_duty_cycle(1)
+        yield(0)
+    print('here!')
+    while True:
+        if extSwitchFlag.get():
+            print('nope')
+            ext_moe.set_duty_cycle(1)
+            ext_enc.setpos(30)
+            error = 10
+            while abs(error) >= 5:
+                ext_con.ref(150)
+                start_time = utime.ticks_ms()
+                utime.sleep_ms(10)
+                pos = ext_enc.read()
+                stop_time = utime.ticks_ms()
+                step_time = utime.ticks_diff(stop_time, start_time)
+                error = ext_con.compute(pos, step_time/1000, save_data=False)
+                ext_moe.set_duty_cycle(100)
+                print(error)
+                yield(0)
+            ext_moe.set_duty_cycle(1)
+        val = index.get()
+        if extrusion[val] == 1:
+            ext_moe.set_duty_cycle(-70)
+        elif extrusion[val] == 0:
+            ext_moe.set_duty_cycle(1)
+        yield(0)
+
 #     while True:
 #         for idx in range(0, len(syringe)):
 #             if syringe[idx] == 1:
@@ -210,24 +284,34 @@ def transverse_motor():
                 
 
 if __name__ == "__main__":
-         
-         radSwitchFlag = Share('h', thread_protect = False, name = "radSwitchFlag")
-         transSwitchFlag = Share('h', thread_protect = False, name = "transSwitchFlag")
-#          extSwitchFlag = Share('h', thread_protect = False, name = "extSwitchFlag")
-         radFlag = Share('h', thread_protect = False, name = "radFlag")
-         transFlag = Share('h', thread_protect = False, name = "transFlag")
-         
-         task_0 = cotask.Task(radial_motor, name = 'Task_0', priority = 1, period = 10, profile=True, trace=False)
-         task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 1, period = 10, profile=True, trace=False)
-         task_3 = cotask.Task(radial_switch, name = 'Task 3', priority = 2, period = 10, profile=True, trace=False)
-         task_4 = cotask.Task(transverse_switch, name = 'Task 4', priority = 2, period = 10, profile=True, trace=False)
-         cotask.task_list.append(task_0)
-         cotask.task_list.append(task_1)
-         cotask.task_list.append(task_3)
-         cotask.task_list.append(task_4)
-#          cotask.task_list.append(task_1)
-         
-         # Need to figure out how to move the encoder back to neutral position 
-         # once done with operation
-         while True:
-             cotask.task_list.pri_sched()
+     dataList = carttopolar()
+     radial = dataList[2]
+     transverse = dataList[1]
+     extrusion = dataList[0]
+     
+     radSwitchFlag = Share('h', thread_protect = False, name = "radSwitchFlag")
+     transSwitchFlag = Share('h', thread_protect = False, name = "transSwitchFlag")
+     extSwitchFlag = Share('h', thread_protect = False, name = "extSwitchFlag")
+     radFlag = Share('h', thread_protect = False, name = "radFlag")
+     transFlag = Share('h', thread_protect = False, name = "transFlag")
+     extFlag = Share('h', thread_protect = False, name = "extFlag")
+     index = Share('h', thread_protect = False, name = "index")
+     
+     task_0 = cotask.Task(radial_motor, name = 'Task_0', priority = 1, period = 10, profile=True, trace=False)
+     task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 1, period = 10, profile=True, trace=False)
+     task_2 = cotask.Task(extrusion_motor, name = 'Task_2', priority = 1, period = 10, profile=True, trace=False)
+     task_3 = cotask.Task(radial_switch, name = 'Task 3', priority = 2, period = 10, profile=True, trace=False)
+     task_4 = cotask.Task(transverse_switch, name = 'Task 4', priority = 2, period = 10, profile=True, trace=False)
+     task_5 = cotask.Task(extrusion_switch, name = 'Task 5', priority = 2, period = 10, profile=True, trace=False)
+     cotask.task_list.append(task_0)
+     cotask.task_list.append(task_1)
+     cotask.task_list.append(task_2)
+     cotask.task_list.append(task_3)
+     cotask.task_list.append(task_4)
+     cotask.task_list.append(task_5)
+#          cotask.task_list.appendtask_1)
+     
+     # Need to figure out how to move the encoder back to neutral position 
+     # once done with operation
+     while True:
+         cotask.task_list.pri_sched()

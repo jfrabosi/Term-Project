@@ -111,13 +111,11 @@ if __name__ == '__main__':
     pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
     pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
     pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
-    pinB10 = pyb.Pin(pyb.Pin.board.PB10, pyb.Pin.OUT_PP)
+    pinB10 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
     pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
     trans_moe = MotorDriver(pinC1, pinA0, pinA1, pyb.Timer(5, freq = 20000))
     rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
-    ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(2, freq = 20000), 3, pinA7)
+    ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(1, freq = 20000), 2, pinA7)
     while True:
-        trans_moe.set_duty_cycle(80)
-        rad_moe.set_duty_cycle(80)
         ext_moe.set_duty_cycle(-80)
     

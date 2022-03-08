@@ -100,14 +100,15 @@ def carttopolar():
         # Converts the x data strings to floats to be plotted.
         ylist = [float(i) for i in ylist]
         for i in range(0,len(xlist)):
-            tanvar = ylist[i]/xlist[i]
-            theta = (math.atan((ylist[i]+d)/xlist[i])- math.asin(t/((xlist[i]**2)+((ylist[i]+d)**2))))*(180/math.pi)
+            phi = math.atan( (ylist[i]+d) / xlist[i] )
+            if xlist[i] > 0:
+                theta = (phi - math.asin(t/ ( xlist[i]**2+(ylist[i]+d)**2 )**0.5 ) -math.pi/2)*(180/math.pi)
+            else:
+                theta = (phi - math.asin(t/ ( xlist[i]**2+(ylist[i]+d)**2 )**0.5 ) +math.pi/2)*(180/math.pi)
             thetalist.append(theta)
-            r = ((xlist[i]**2)+((ylist[i] + d)**2)-(t**2))**(0.5)
+            r = ( (xlist[i]**2)+((ylist[i] + d)**2)-(t**2) )**(0.5)
             rlist.append(r)
-        print(zlist)
-        print(rlist)
-        print(thetalist)
+        return [zlist, rlist, thetalist]
         
 if __name__ == "__main__":
     carttopolar()

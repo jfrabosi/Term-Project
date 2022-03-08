@@ -18,6 +18,6 @@ class LimitSwitch:
         return self.pin.value()
 
 if __name__ == '__main__':
-    pinA6 = pyb.Pin(pyb.Pin.board.PA6, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
+    pinA6 = pyb.Pin(pyb.Pin.board.PB10, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
     while True:
         print(pinA6.value())
