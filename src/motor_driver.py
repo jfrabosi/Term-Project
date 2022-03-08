@@ -5,7 +5,7 @@
             utilized by the DC motors for the
             entirety of the quarter.
 @author     Cesar Santana
-@author     Jacob Frabosilio
+@author     Jakob Frabosilio
 @author     Ayden Carbaugh
 '''
 import pyb
@@ -60,3 +60,47 @@ class MotorDriver:
             self.ch1.pulse_width_percent(0)
             self.ch2.pulse_width_percent(abs(level))
 
+class MotorDriverExtrude:
+    '''!
+    This class impliments a motor driver for an ME 405 kit.
+    '''
+    def __init__(self, pwmPin, timer, channel, directionPin):
+        '''!
+        Creates a motor driver by initializing GPIO
+        pins and turning the motor off for safety.
+        @param en_pin poin used to enable the motor
+        @param in1pin pin used to send PWM signal to motor
+        @param in2pin pin used to send PWM signal to motor
+        @param timer timer associated with the motor
+        '''
+        ## Configures the in1pin for the motor
+        self.pwmPin = pwmPin
+        ## Configures a timer for the motor
+        self.timer = timer
+        self.channel = channel
+        self.dirPin = directionPin
+        ## Configures cghannel 1 to the motor timer
+        self.ch = self.timer.channel(self.channel, pyb.Timer.PWM, pin=self.pwmPin)
+      
+    def set_duty_cycle(self, level):
+        '''!
+        This method sets the duty cycle to be sent
+        to the motor to the given level. Posotive values
+        cause torque in one direction, negative values
+        in the opposite direction.
+        @param level A signed intiger holding the duty
+               cycle of the voltage sent to the motor
+        '''
+        self.en_pin.high()
+        if level > 100:
+            self.ch.pulse_width_percent(100)
+            self.dirPin.high()
+        elif level < -100:
+            self.ch.pulse_width_percent(100)
+            self.dirPin.low()
+        elif level>0:
+            self.ch.pulse_width_percent(abs(level))
+            self.dirPin.high()
+        elif level<0:
+            self.ch.pulse_width_percent(abs(level))
+            self.dirPin.low()
