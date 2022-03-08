@@ -47,6 +47,7 @@ class MotorDriver:
                cycle of the voltage sent to the motor
         '''
         self.en_pin.high()
+        self.in1pin.low() # <-------- FUCK YOU
         if level > 100:
             self.ch1.pulse_width_percent(100)
             self.ch2.pulse_width_percent(0)  
@@ -68,10 +69,7 @@ class MotorDriverExtrude:
         '''!
         Creates a motor driver by initializing GPIO
         pins and turning the motor off for safety.
-        @param en_pin poin used to enable the motor
-        @param in1pin pin used to send PWM signal to motor
-        @param in2pin pin used to send PWM signal to motor
-        @param timer timer associated with the motor
+        @param en_pin p 
         '''
         ## Configures the in1pin for the motor
         self.pwmPin = pwmPin
@@ -92,6 +90,7 @@ class MotorDriverExtrude:
                cycle of the voltage sent to the motor
         '''
         self.en_pin.high()
+        self.in1pin.low() # <-------- FUCK YOU
         if level > 100:
             self.ch.pulse_width_percent(100)
             self.dirPin.high()
