@@ -71,6 +71,10 @@ class EncoderDriver:
         
         return self.pos
         
+    def setpos(self, pos):
+        self.pos = pos
+        self.start = abs(self.timer.counter())
+        
     def zero(self):
         '''!
         This methods resets the position of the encoder to zero.
