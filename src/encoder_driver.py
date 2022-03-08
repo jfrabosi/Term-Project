@@ -17,13 +17,14 @@ class EncoderDriver:
     This class impliments an encoder driver for an ME 405 kit.
     '''
     
-    def __init__(self, pin1, pin2, timer):
+    def __init__(self, pin1, pin2, timer, CPR):
         '''!
         Creates an encoder driver by initializing pins on
         the shoe and configureing channels.
         @param pin1 pin associated with encoder channel A
         @param pin2 pin associated with encioder channel B
         @param timer timer associated with the encoder
+        @param CPR number of encoder counts per revolution
         '''
         ## Position of the encoder
         self.pos = 0
@@ -33,13 +34,15 @@ class EncoderDriver:
         self.start = 0
         ## Stopping time of the encoder
         self.stop = 0
-        
         ## Configures pin1 for the encoder
         self.pin1 = pin1
         ## Configures pin 2 for the encoder
         self.pin2 = pin2
         ## Configures a timer for the encoder
         self.timer = timer
+        
+        ## Sets CPR value
+        self.CPR = CPR
         
         ## Configures channel 1 to the encoder timer
         self.ch1 = self.timer.channel(1, pyb.Timer.ENC_A, pin=self.pin1)
@@ -62,7 +65,7 @@ class EncoderDriver:
         elif self.delta > 32768:
             self.delta = self.delta - 65536
         
-        self.delta = self.delta * 360 / (256*16*2)
+        self.delta = self.delta * 360 / self.CPR
         self.pos += self.delta
         self.start = self.stop
         
