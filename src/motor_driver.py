@@ -47,8 +47,8 @@ class MotorDriver:
                cycle of the voltage sent to the motor
         '''
         self.en_pin.high()
-        self.in1pin.low() # <-------- FUCK
-        self.in2pin.low() # <-------- FUCK YOU
+        self.in1pin.low() 
+        self.in2pin.low() 
 
         if level > 100:
             self.ch1.pulse_width_percent(100)
@@ -104,18 +104,18 @@ class MotorDriverExtrude:
             self.ch.pulse_width_percent(abs(level))
             self.dirPin.low()
             
-if __name__ == '__main__':
-    pinC1 = pyb.Pin(pyb.Pin.board.PC1, pyb.Pin.OUT_PP)
-    pinA0 = pyb.Pin(pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
-    pinA1 = pyb.Pin(pyb.Pin.board.PA1, pyb.Pin.OUT_PP)
-    pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
-    pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
-    pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
-    pinB10 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
-    pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
-    trans_moe = MotorDriver(pinC1, pinA0, pinA1, pyb.Timer(5, freq = 20000))
-    rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
-    ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(1, freq = 20000), 2, pinA7)
-    while True:
-        ext_moe.set_duty_cycle(-80)
+# if __name__ == '__main__':
+#     pinC1 = pyb.Pin(pyb.Pin.board.PC1, pyb.Pin.OUT_PP)
+#     pinA0 = pyb.Pin(pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
+#     pinA1 = pyb.Pin(pyb.Pin.board.PA1, pyb.Pin.OUT_PP)
+#     pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
+#     pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
+#     pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
+#     pinB10 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
+#     pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
+#     trans_moe = MotorDriver(pinC1, pinA0, pinA1, pyb.Timer(5, freq = 20000))
+#     rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
+#     ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(1, freq = 20000), 2, pinA7)
+#     while True:
+#         ext_moe.set_duty_cycle(-80)
     

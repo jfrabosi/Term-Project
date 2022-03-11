@@ -2,57 +2,38 @@
 @file       gcode converter.py
 @brief      This file contains the code for converting gcode to polar coordinates
 @details    
-@author     Jakob Frabosilio, Ayden Carbaugh, Cesar Santana
+@author     Jakob Frabosilio 
+@author     Ayden Carbaugh 
+@author     Cesar Santana
 @date       02/22/2022
 '''
 
-## Import Statements
+
 import math
 
-# def gcodetocart():
-#     # Opens gcode and saves the data in a variable called contents.
-#     unit = 'none'
-#     displist = []
-#     xlist = []
-#     ylist = []
-#     z='Z'
-#     with open('toolpath.nc') as file:
-#         ## The data from eric.csv
-#         content = file.readlines()
-#         content = [i.replace("\n", "") for i in content]
-#         content = [i.replace(" F9.0", "") for i in content]
-#         content = [i.replace(" F30.0", "") for i in content]
-# #         for i in content:
-# #             if z in i:
-# #                 content[i].pop()
-#         unit = content.pop(0)
-#         if unit == 'G20':
-#             unit = 'English'
-#         elif unit == 'G21':
-#             unit = 'Metric'
-#         else:
-#             print('no units selected')
-#         content = [i.split(" ") for i in content]
-#         print(content)
-# 
-#                 
-# 
-#         
-#     
-#     
-#     
-#     
-#     
+   
 def carttopolar():
+    '''!
+    This method opens a .nc file that contains cartesian coordinates,
+    splits them into 3 sperate lists and then converts them to 
+    cartesian coordinates
+    '''
+    ## List of x values
     xlist = []
+    ## List of y values
     ylist = []
+    ##List of actuation values
     zlist = []
+    ## List of theta values
     thetalist = []
+    ## List of radial values
     rlist = []
+    
     ## offset in inches
     d = 6.04
     ## distance between point of rotation and nozzle
     t = 1.89
+    
     with open('toolpath.nc') as file:
         content = file.readlines()
         for column in content:
