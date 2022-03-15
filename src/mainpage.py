@@ -1,5 +1,4 @@
 '''!
-
 @file                mainpage.py
 @brief               Brief doc for mainpage.py
 @details             Detailed doc for mainpage.py 
@@ -8,12 +7,20 @@
 @mainpage
 
 @scetion sec_1  SOFTWARE OVERVIEW
-                Talk about the drivers used
+                This section will cover the various drivers used in our system
+                as well as what tasks they were utilized in. The tasks themselves
+                be discussed in a later section.
+@subsection 1s1                
                 ## motor driver
+@subsection 1s2
                 ## encoder driver
-                ## g-code file
-                ## limit switch
+@subsection 1s3
                 ## controller
+@subsection 1s4
+                ## limit switch
+@subsection 1s5
+                ## g-code
+@subsection 1s6
                 ## task_share and cotask
                 
 @section sec_2  TASK STRUCTURE
