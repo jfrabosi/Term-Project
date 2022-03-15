@@ -65,7 +65,7 @@
                 objects. each task will be discussed more in depth in the following 
                 sections.
                 
-                ## Include picture of task diagram
+                ![](Task_Diagram.png)
                 
 @subsection 2s1
                 ##RADIAL LIMIT SWITCH TASK
