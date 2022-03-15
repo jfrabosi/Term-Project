@@ -11,17 +11,49 @@
                 as well as what tasks they were utilized in. The tasks themselves
                 be discussed in a later section.
 @subsection 1s1                
-                ## motor driver
+                ##MOTOR DRIVER
+                The motor driver script contains class files that allow us to
+                apply pwm to our dc motors. Since we are utilizing two diffrent
+                motor shield we have two separte class files since each motor
+                shield utilizes a diffrent amount of pins. The motor driver is
+                utilized in all of outr motor tasks in order to apply a duty
+                cycle.
+                
 @subsection 1s2
-                ## encoder driver
+                ##ENCODER DRIVER
+                The encoder driver script contains a class file that allows us
+                perform various functions with the encoders on the motors. These
+                functions enclude reading the position of the encoder, zeroing
+                the position of the encoder and overwriting the position of 
+                the encoder wit ha custom value. The encoder driver is used in all
+                of our motor tasks in order to locate read out our transverse
+                and radial positions.
 @subsection 1s3
-                ## controller
+                ##CONTROLLER
+                The controller script contains a class file that allows us to 
+                perform PID control. It contains functions for setting our gain
+                values and setpoints. It also contains a function to compute the 
+                total error in our system. This file is used by our motor tasks
+                in order to impliment positional control.
 @subsection 1s4
-                ## limit switch
+                ##LIMIT SWITCH
+                The limit switch script is a short script that contains a class
+                file that allows us to check the status of our limit switches.
+                It contains a function that will return the pin value when called.
+                This file is used in our limit switch tasks in order to update key
+                flag variables depending on whether or not the limit switches 
+                are actuated.
 @subsection 1s5
-                ## g-code
+                ##G-CODE
+                The gcode_convert script is a function file that contains a 
+                function that takes a .nc file, converts it to three seperate
+                lists containing cartesian coordinates, and then conversts those
+                lists to cartesian coordinates. This file is used in our execution
+                script in order to create the lists that will be used by our
+                various motor tasks.
+                
 @subsection 1s6
-                ## task_share and cotask
+                ##TASK_SHARE & COTASK
                 
 @section sec_2  TASK STRUCTURE
                 This section will cover the tasks that we plan on utilizing for
