@@ -7,15 +7,23 @@
 
 @mainpage
 
-
-@section sec_2  SOFTWARE DESIGN
+@scetion sec_1  SOFTWARE OVERVIEW
+                Talk about the drivers used
+                ## motor driver
+                ## encoder driver
+                ## g-code file
+                ## limit switch
+                ## controller
+                ## task_share and cotask
+                
+@section sec_2  TASK STRUCTURE
                 This section will cover the tasks that we plan on utilizing for
                 our 2.5 axis machine. The main taks that we will need include 
                 a G-Code task thatconverts G-code into usable coordinates, a
                 radial motor task, a transverse motor task, and a syringe motor 
                 task. The task diagram below shows how we plan on implimenting
-                these tasks into our design through the use of queue and share 
-                objects. each task will be discussed more i depth in the following 
+                these tasks into our design through the use of share 
+                objects. each task will be discussed more in depth in the following 
                 sections.
                 
                 ## Include picture of task diagram
@@ -43,20 +51,8 @@
                 ##EXTRUSION LIMIT SWITCH TASK
                 The extrusion limit switch task continuously checks to see if the 
                 limit switch for the extrusion motor task has benn actuated.
-@subsection 2s14
-                ##G-CODE TASK
-                The G-Code task will be responsible for the conversion a G-Code
-                into coordinates that can be used by our machine. This will be
-                accomplished by first converting the G-Code file into cartesian
-                coordinates through the use of splicing and appending. These 
-                will then be converted to polar coordinates using conversion
-                formulas. The radial and transverese coordinates will then be 
-                split into seperate quees and then sent off to the appropiaate
-                motor task.
                 
-                ## FSM?
-                
-@subsection 2s5 
+@subsection 2s4 
                 ##RADIAL MOTOR TASK
                 The radial motor task will be responsible for the radial motion
                 of our nozzle. In order to accomplish this the radial motion will
@@ -79,7 +75,7 @@
                 
                 ## FSM?
                 
-@subsection 2s6
+@subsection 2s5
                 ##TRANSVERSE MOTOR TASK
                 The transverse motor task will be responsible for the transverse
                 motion of our nozzle. Its functionality is very similar to that
@@ -104,7 +100,7 @@
 
                 ## FSM?
                 
-@subsection 2s7 
+@subsection 2s6
                 ##EXTRUSION MOTOR TASK
                 The syringe motor task will be responsible for the dispersion
                 of the pancake mixture.
