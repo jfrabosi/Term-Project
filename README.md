@@ -137,4 +137,5 @@ The pancake  batter and syringe added too much weight on the cantilever beam whi
 much testing resulted in our mechanism transferring power from the motor to the shaft 
 shattering. Despite not being able to implement the pancake batter, the team found 
 success in being able to plot a shape given the cartesian coordinates with a reasonable 
-degree of accuracy. 
+degree of accuracy, proving that our concept worked through the use of our designed 
+hardware and corresponding code. 
