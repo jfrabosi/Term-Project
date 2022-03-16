@@ -56,8 +56,11 @@ ext_enc = EncoderDriver(pyb.Pin.cpu.A2, pyb.Pin.cpu.A3, pyb.Timer(2, prescaler =
 ## Creates an extrusion controller object
 ext_con = PID(5.5, 45, 0, 0)
 
+## Creates a radial limit switch object
 radSwitch = LimitSwitch(pinA6)
+## Creates a transverse limit switch object
 transSwitch = LimitSwitch(pinB3)
+## Creates an extrusion limit switch object
 extSwitch = LimitSwitch(pinA8)
 
 trans_enc.zero()
@@ -266,13 +269,13 @@ if __name__ == "__main__":
      transSwitchFlag = Share('h', thread_protect = False, name = "transSwitchFlag")
      ## Shared flag variable used to indicate when extrusion limit switch is pressed
      extSwitchFlag = Share('h', thread_protect = False, name = "extSwitchFlag")
-     ##
+     ## Shared flag variable used to indicate when the radial task has reached its index
      radFlag = Share('h', thread_protect = False, name = "radFlag")
-     ##
+     ## Shared flag variable used to indicate when the transverse task has reached its index
      transFlag = Share('h', thread_protect = False, name = "transFlag")
-     ##
+     ## Shared flag variable used to indicate when the extrusion task ccan begin its cycle
      extFlag = Share('h', thread_protect = False, name = "extFlag")
-     ##
+     ## Shared flag variable used to indicate what index the extrusion task should be on
      index = Share('h', thread_protect = False, name = "index")
      
      ## Creates a radial_motor task
