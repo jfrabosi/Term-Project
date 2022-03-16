@@ -54,6 +54,11 @@
                 
 @subsection 1s6
                 ##TASK_SHARE & COTASK
+                The task_share and cotask scripts were scrips that were shared with
+                us in lecture in order to imoliment cooperative multitasking.
+                The task_share file allows us to create shared variables to be used
+                among our generators while the cotask file allows us to turn our 
+                generators into tasks and run them simultaneously.
                 
 @section sec_2  TASK STRUCTURE
                 This section will cover the tasks that we plan on utilizing for
@@ -102,47 +107,48 @@
                 switch, the position of the encoder is updated to correspond
                 with the the position of the limit switch. It will also wait 
                 for the transverese motor to make contact with its limit switch 
-                before proceeding. Once both the radial and transverse limit 
-                switches have been actauted, the radial task will begin to make  
-                its way through a set of coordinates in a list moving the motor 
-                to the specified list index. The radial task willnot move onto 
-                the next index until both the radial and transverse coordinates 
-                of the same index have both been reached. A constant duty cycle
-                is appied to the motor as it goes through the list, and it
-                utilizes PI positional control to make sure it gets as close to
-                the specified coordinates as it can.
+                before proceeding. This will all be done in the initialization
+                state S0 shown in the FSM below. Once contact with the radial
+                and transverse limit switches has been made, the flag variables for
+                each of those motors will be changed to one, and thus the
+                task will transition into the next state S1, which is locating the
+                radial coordinates. In this state, the task will make its way
+                through a provided list of coordinates using a PI controller for
+                positional control in order to get as colse to the desired value
+                as it can. A constant duty cycle will be applied to the motor
+                as it moves from index to index. In case the radial motor reaches
+                its desired index value before the transverse motor, it will enter 
+                an idler state, S2, where it will wait for the trnasverse motor 
+                to reach its index value before continuing. This state also uses
+                the aforementioned flag variables to make sure that each motor has
+                reached its appropriate index value.
                 
-                ## FSM?
+                ![](Rad_MotorFSM.png)
                 
 @subsection 2s5
                 ##TRANSVERSE MOTOR TASK
                 The transverse motor task will be responsible for the transverse
-                motion of our nozzle. Its functionality is very similar to that
-                of the radial motor task; however, since this task  The task begins by first locating 
-                itself using the limit switch located on its path by mocing the
-                nozzle toward the limit switch located at the end of the radial arm
-                until it makes contact. Once it makes contact the position of the 
-                transverse encoder is updated to match the position of the limit switch.
-                It will also wait for the radial motor to make contact with its 
-                limit switch until before procedding.Once both the radial and 
-                transverse limit  switches have been actauted, the transverse task 
-                will begin to make its way through a set of coordinates in a list,
-                moving the motor to the specified list index. The transverse task 
-                will not move onto the next index until both the radial and 
-                transverse coordinates of the same index have both been reached. 
-                A constant duty cycle is appied to the motor as it goes through
-                the list, and it utilizes PI control to make sure t gets as close
-                to the specified coordinates as it can. Also, since this task tries to
-                measure linear distance using angular readings, the encoder values 
-                must be converted to linear.
-                
+                motion of our nozzle, and is very similar in functionality to the
+                radial motor task. The task begins by locating itself in the 
+                initialization state S0 in the same manner as the radial motor task,
+                the only difference being that this task is also responsible for
+                updating the flag variable for the extrusion task so that it can begin 
+                its cycle. After the task has gone through the initialization state, it 
+                moves onto S1, locating coordinates. In the same manner as the radial
+                motor task, this tak also has its own list that it iterates through
+                using positional control to get as close to the desired values as it
+                possibly can. This task also contains an idler state in case it reaches its
+                index value before the radial motor task. Once both tasks reach their index
+                value the flag variables are updated and they move onto the next value
+                in their respective lists.
 
-                ## FSM?
+                ![](Trans_MotorFSM.png)
                 
 @subsection 2s6
                 ##EXTRUSION MOTOR TASK
-                The syringe motor task will be responsible for the dispersion
-                of the pancake mixture.
+                The extrusion motor task will be responsible for the actuation of
+                syringe that will dispense our pancake batter onto the plotting
+                surface.
 
 '''
 
