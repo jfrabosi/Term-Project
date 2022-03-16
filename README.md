@@ -123,3 +123,18 @@ dispensing motion, and a PVC tube for moving batter to the nozzle holder.
 
 
 ## ELECTRONICS HOUSING
+
+
+## RESULTS
+After assembling the pancake plotter and uploading the code to the Nucleo STM 32,
+our group was able to successfully plot a square using a marker and g-code created 
+by taking points on an image and converting them to polar corrdinates using a cartesian 
+to polar converting script. When implementing the pancake batter and syringe into the 
+system, the team ran into issues with the amount of torque transmitted by the radial 
+axis motor. The torque required to accurately recreate the square pattern we had achieved 
+with the marker required a much higher torque than our motor and fixture could apply.
+The pancake  batter and syringe added too much weight on the cantilever beam which after 
+much testing resulted in our mechanism transferring power from the motor to the shaft 
+shattering. Despite not being able to implement the pancake batter, the team found 
+success in being able to plot a shape given the cartesian coordinates with a reasonable 
+degree of accuracy. 
