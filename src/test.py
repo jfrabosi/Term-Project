@@ -22,27 +22,27 @@ from gcode_convert import carttopolar
 ## Diameter of the transverse motor gear in inches
 moe_diameter = 0.366 
 
-##
+## Creates the enable pin for the transverse motor
 pinC1 = pyb.Pin(pyb.Pin.board.PC1, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 5 channel 1 for the transverse motor
 pinA0 = pyb.Pin(pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 5 channel 2 for the transverse motor
 pinA1 = pyb.Pin(pyb.Pin.board.PA1, pyb.Pin.OUT_PP)
-##
+## Creates the enable pin for the radial motor
 pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 3 channel 1 for the radial motor
 pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 3 channel 2 for the radial motor
 pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 1 channel 1 for the extruder motor
 pinA9 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
-##
+## Creates the pin timer 1 channel 2 for the extruder motor
 pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
-##
+## Creates a pin for the radial limit switch
 pinA6 = pyb.Pin(pyb.Pin.board.PA6, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
-##
+## Creates a pin for the transverse limit switch
 pinB3 = pyb.Pin(pyb.Pin.board.PB3, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
-##
+## Creates a pin for the extruder limit switch
 pinA8 = pyb.Pin(pyb.Pin.board.PA8, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
 
 ## Creates a transverse motor object
