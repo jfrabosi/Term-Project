@@ -6,7 +6,7 @@
 
 @mainpage
 
-@scetion sec_1  SOFTWARE OVERVIEW
+@section sec_1  SOFTWARE OVERVIEW
                 This section will cover the various drivers used in our system
                 as well as what tasks they were utilized in. The tasks themselves
                 be discussed in a later section.
