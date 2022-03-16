@@ -1,0 +1,194 @@
+\hypertarget{classcontroller_1_1_p_i_d}{}\doxysection{controller.\+PID Class Reference}
+\label{classcontroller_1_1_p_i_d}\index{controller.PID@{controller.PID}}
+
+
+This class utilizez \mbox{\hyperlink{classcontroller_1_1_p_i_d}{PID}} control to generate outputs for a system.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_a49598ba78aa5017905e2d873761c6f70}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_aa17a671e00325527798e4894e7035e08}{K\+\_\+P}}, \mbox{\hyperlink{classcontroller_1_1_p_i_d_aac701feaaa84e3ba94269b030a33f94b}{K\+\_\+I}}, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a8368587423e0fe77c86b7423b7b8cb56}{K\+\_\+D}}, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a8e27f5edc5ca460c699ea381586825a0}{setpoint}})
+\begin{DoxyCompactList}\small\item\em This creates a controller object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_aff784fd062b6435d5c3a35b7328c1e3a}{ref}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a8e27f5edc5ca460c699ea381586825a0}{setpoint}})
+\begin{DoxyCompactList}\small\item\em This method sets the target value for the controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_a403845b1d8b378eb3dff6196f53112e2}{prop\+\_\+gain}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_aa17a671e00325527798e4894e7035e08}{K\+\_\+P}})
+\begin{DoxyCompactList}\small\item\em This method sets the proportional gain for the controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_aaac216c3ef7aa907e02b16598f42a96f}{int\+\_\+gain}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_aac701feaaa84e3ba94269b030a33f94b}{K\+\_\+I}})
+\begin{DoxyCompactList}\small\item\em This method sets the integral gain for the controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_a8728cb6bcaedca34d979e05fac2b6980}{deriv\+\_\+gain}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a8368587423e0fe77c86b7423b7b8cb56}{K\+\_\+D}})
+\begin{DoxyCompactList}\small\item\em This method sets the derivative gain for the controller. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcontroller_1_1_p_i_d_ab051b3de8de16cb1aaa52d7c6264b7c9}{compute}} (self, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a3491c14391255329543654340c107a10}{meas}}, \mbox{\hyperlink{classcontroller_1_1_p_i_d_a5767b2c2965d8738c155905ecca7ccc1}{t\+\_\+step}}, save\+\_\+data=False)
+\begin{DoxyCompactList}\small\item\em This method computes the total output of the \mbox{\hyperlink{classcontroller_1_1_p_i_d}{PID}} controller by using the proportional, integral, and derivative error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a2471a12683272049ea9f0a8ddc935d0a}\label{classcontroller_1_1_p_i_d_a2471a12683272049ea9f0a8ddc935d0a}} 
+def {\bfseries clear} (self)
+\begin{DoxyCompactList}\small\item\em This method clears the lists containing time, measured, and refernece values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a8e27f5edc5ca460c699ea381586825a0}\label{classcontroller_1_1_p_i_d_a8e27f5edc5ca460c699ea381586825a0}} 
+{\bfseries setpoint}
+\begin{DoxyCompactList}\small\item\em Reference Value for controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_aa17a671e00325527798e4894e7035e08}\label{classcontroller_1_1_p_i_d_aa17a671e00325527798e4894e7035e08}} 
+{\bfseries K\+\_\+P}
+\begin{DoxyCompactList}\small\item\em Proportional controller gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_aac701feaaa84e3ba94269b030a33f94b}\label{classcontroller_1_1_p_i_d_aac701feaaa84e3ba94269b030a33f94b}} 
+{\bfseries K\+\_\+I}
+\begin{DoxyCompactList}\small\item\em Integral controller gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a8368587423e0fe77c86b7423b7b8cb56}\label{classcontroller_1_1_p_i_d_a8368587423e0fe77c86b7423b7b8cb56}} 
+{\bfseries K\+\_\+D}
+\begin{DoxyCompactList}\small\item\em Derivative controller gain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontroller_1_1_p_i_d_a5767b2c2965d8738c155905ecca7ccc1}{t\+\_\+step}}
+\begin{DoxyCompactList}\small\item\em Desired time step to be used by the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a31820a44dc885330c0bff11d8b496e20}\label{classcontroller_1_1_p_i_d_a31820a44dc885330c0bff11d8b496e20}} 
+{\bfseries error}
+\begin{DoxyCompactList}\small\item\em Error of the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_af500e9dcecc365d87d369c61c6fb6aa6}\label{classcontroller_1_1_p_i_d_af500e9dcecc365d87d369c61c6fb6aa6}} 
+{\bfseries P\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Proportional error of the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_ab7768cc6bcb8aea3a8f154f8e260603c}\label{classcontroller_1_1_p_i_d_ab7768cc6bcb8aea3a8f154f8e260603c}} 
+{\bfseries I\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Integral error of the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a7f00145522f8aa07d94a9b5c50efb3c0}\label{classcontroller_1_1_p_i_d_a7f00145522f8aa07d94a9b5c50efb3c0}} 
+{\bfseries D\+\_\+error}
+\begin{DoxyCompactList}\small\item\em Derivative error of the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_ac4f56a1f239dc692f82e5741d45a9d7a}\label{classcontroller_1_1_p_i_d_ac4f56a1f239dc692f82e5741d45a9d7a}} 
+{\bfseries time\+\_\+vals}
+\begin{DoxyCompactList}\small\item\em Stored time values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_afcc05796a1e5afebd1daeacbcf523f35}\label{classcontroller_1_1_p_i_d_afcc05796a1e5afebd1daeacbcf523f35}} 
+{\bfseries meas\+\_\+vals}
+\begin{DoxyCompactList}\small\item\em Stored measured values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a8e366f06ad766ef051b4304beecf9db6}\label{classcontroller_1_1_p_i_d_a8e366f06ad766ef051b4304beecf9db6}} 
+{\bfseries ref\+\_\+vals}
+\begin{DoxyCompactList}\small\item\em Stored reference values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a01abb291fd3642c89e40cc655dd8c078}\label{classcontroller_1_1_p_i_d_a01abb291fd3642c89e40cc655dd8c078}} 
+{\bfseries output}
+\begin{DoxyCompactList}\small\item\em Output value generated by the controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a3491c14391255329543654340c107a10}\label{classcontroller_1_1_p_i_d_a3491c14391255329543654340c107a10}} 
+{\bfseries meas}
+\begin{DoxyCompactList}\small\item\em Measuered value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class utilizez \mbox{\hyperlink{classcontroller_1_1_p_i_d}{PID}} control to generate outputs for a system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a49598ba78aa5017905e2d873761c6f70}\label{classcontroller_1_1_p_i_d_a49598ba78aa5017905e2d873761c6f70}} 
+\index{controller.PID@{controller.PID}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def controller.\+PID.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{K\+\_\+P,  }\item[{}]{K\+\_\+I,  }\item[{}]{K\+\_\+D,  }\item[{}]{setpoint }\end{DoxyParamCaption})}
+
+
+
+This creates a controller object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em K\+\_\+P} & Proportional controller gain \\
+\hline
+{\em K\+\_\+I} & Integral controller gain \\
+\hline
+{\em K\+\_\+D} & Derivative controller gain \\
+\hline
+{\em setpoint} & Sets controller refernece value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_ab051b3de8de16cb1aaa52d7c6264b7c9}\label{classcontroller_1_1_p_i_d_ab051b3de8de16cb1aaa52d7c6264b7c9}} 
+\index{controller.PID@{controller.PID}!compute@{compute}}
+\index{compute@{compute}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily def controller.\+PID.\+compute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{meas,  }\item[{}]{t\+\_\+step,  }\item[{}]{save\+\_\+data = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+This method computes the total output of the \mbox{\hyperlink{classcontroller_1_1_p_i_d}{PID}} controller by using the proportional, integral, and derivative error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meas} & Measured value to be corrected \\
+\hline
+{\em t\+\_\+step} & Desired time step value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a8728cb6bcaedca34d979e05fac2b6980}\label{classcontroller_1_1_p_i_d_a8728cb6bcaedca34d979e05fac2b6980}} 
+\index{controller.PID@{controller.PID}!deriv\_gain@{deriv\_gain}}
+\index{deriv\_gain@{deriv\_gain}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{deriv\_gain()}{deriv\_gain()}}
+{\footnotesize\ttfamily def controller.\+PID.\+deriv\+\_\+gain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{K\+\_\+D }\end{DoxyParamCaption})}
+
+
+
+This method sets the derivative gain for the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em K\+\_\+D} & Derivative gain of the controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_aaac216c3ef7aa907e02b16598f42a96f}\label{classcontroller_1_1_p_i_d_aaac216c3ef7aa907e02b16598f42a96f}} 
+\index{controller.PID@{controller.PID}!int\_gain@{int\_gain}}
+\index{int\_gain@{int\_gain}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{int\_gain()}{int\_gain()}}
+{\footnotesize\ttfamily def controller.\+PID.\+int\+\_\+gain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{K\+\_\+I }\end{DoxyParamCaption})}
+
+
+
+This method sets the integral gain for the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em K\+\_\+I} & Integral gain of the controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a403845b1d8b378eb3dff6196f53112e2}\label{classcontroller_1_1_p_i_d_a403845b1d8b378eb3dff6196f53112e2}} 
+\index{controller.PID@{controller.PID}!prop\_gain@{prop\_gain}}
+\index{prop\_gain@{prop\_gain}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{prop\_gain()}{prop\_gain()}}
+{\footnotesize\ttfamily def controller.\+PID.\+prop\+\_\+gain (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{K\+\_\+P }\end{DoxyParamCaption})}
+
+
+
+This method sets the proportional gain for the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em K\+\_\+P} & Proportional gain of the controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_aff784fd062b6435d5c3a35b7328c1e3a}\label{classcontroller_1_1_p_i_d_aff784fd062b6435d5c3a35b7328c1e3a}} 
+\index{controller.PID@{controller.PID}!ref@{ref}}
+\index{ref@{ref}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily def controller.\+PID.\+ref (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{setpoint }\end{DoxyParamCaption})}
+
+
+
+This method sets the target value for the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setpoint} & Desired value for the controller \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcontroller_1_1_p_i_d_a5767b2c2965d8738c155905ecca7ccc1}\label{classcontroller_1_1_p_i_d_a5767b2c2965d8738c155905ecca7ccc1}} 
+\index{controller.PID@{controller.PID}!t\_step@{t\_step}}
+\index{t\_step@{t\_step}!controller.PID@{controller.PID}}
+\doxysubsubsection{\texorpdfstring{t\_step}{t\_step}}
+{\footnotesize\ttfamily controller.\+PID.\+t\+\_\+step}
+
+
+
+Desired time step to be used by the controller. 
+
+Time step between measured values. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{controller_8py}{controller.\+py}}\end{DoxyCompactItemize}

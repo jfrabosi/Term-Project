@@ -1,0 +1,62 @@
+\hypertarget{motor__driver_8py}{}\doxysection{motor\+\_\+driver.\+py File Reference}
+\label{motor__driver_8py}\index{motor\_driver.py@{motor\_driver.py}}
+
+
+Driver class for the DC motors.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmotor__driver_1_1_motor_driver}{motor\+\_\+driver.\+Motor\+Driver}}
+\begin{DoxyCompactList}\small\item\em This class impliments a motor driver for an ME 405 kit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmotor__driver_1_1_motor_driver_extrude}{motor\+\_\+driver.\+Motor\+Driver\+Extrude}}
+\begin{DoxyCompactList}\small\item\em This class impliments a motor driver for an ME 405 kit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a722b5edada369491fc7f0a4df339684d}\label{motor__driver_8py_a722b5edada369491fc7f0a4df339684d}} 
+{\bfseries motor\+\_\+driver.\+pin\+C1} = pyb.\+Pin(pyb.\+Pin.\+board.\+PC1, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_afe51929a7963b0f14d4d0e1b8727f4c7}\label{motor__driver_8py_afe51929a7963b0f14d4d0e1b8727f4c7}} 
+{\bfseries motor\+\_\+driver.\+pin\+A0} = pyb.\+Pin(pyb.\+Pin.\+board.\+PA0, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a372bad3b2eae4d3827d1a2bd742900af}\label{motor__driver_8py_a372bad3b2eae4d3827d1a2bd742900af}} 
+{\bfseries motor\+\_\+driver.\+pin\+A1} = pyb.\+Pin(pyb.\+Pin.\+board.\+PA1, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a53322de4e4a302e27db353723de49de8}\label{motor__driver_8py_a53322de4e4a302e27db353723de49de8}} 
+{\bfseries motor\+\_\+driver.\+pin\+A10} = pyb.\+Pin(pyb.\+Pin.\+board.\+PA10, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_ad897915bbf1b475340a51c8a084715a4}\label{motor__driver_8py_ad897915bbf1b475340a51c8a084715a4}} 
+{\bfseries motor\+\_\+driver.\+pin\+B4} = pyb.\+Pin(pyb.\+Pin.\+board.\+PB4, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a7dcdad0a005b71b649a59b7d884c832d}\label{motor__driver_8py_a7dcdad0a005b71b649a59b7d884c832d}} 
+{\bfseries motor\+\_\+driver.\+pin\+B5} = pyb.\+Pin(pyb.\+Pin.\+board.\+PB5, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a2415ba3c6655e1dbe92da15e771f584b}\label{motor__driver_8py_a2415ba3c6655e1dbe92da15e771f584b}} 
+{\bfseries motor\+\_\+driver.\+pin\+B10} = pyb.\+Pin(pyb.\+Pin.\+board.\+PA9, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a985cc1c1a2c1017734bdf61f38570b1c}\label{motor__driver_8py_a985cc1c1a2c1017734bdf61f38570b1c}} 
+{\bfseries motor\+\_\+driver.\+pin\+A7} = pyb.\+Pin(pyb.\+Pin.\+board.\+PA7, pyb.\+Pin.\+OUT\+\_\+\+PP)
+\item 
+\mbox{\Hypertarget{motor__driver_8py_a404ee9b9f5c030e70ee92fcf251ca438}\label{motor__driver_8py_a404ee9b9f5c030e70ee92fcf251ca438}} 
+{\bfseries motor\+\_\+driver.\+trans\+\_\+moe} = Motor\+Driver(pin\+C1, pin\+A0, pin\+A1, pyb.\+Timer(5, freq = 20000))
+\item 
+\mbox{\Hypertarget{motor__driver_8py_ab06de8d140187c39b363515b812d501b}\label{motor__driver_8py_ab06de8d140187c39b363515b812d501b}} 
+{\bfseries motor\+\_\+driver.\+rad\+\_\+moe} = Motor\+Driver(pin\+A10, pin\+B4, pin\+B5, pyb.\+Timer(3, freq = 20000))
+\item 
+\mbox{\Hypertarget{motor__driver_8py_af1bc05be6dd1ff8a9fd04145b057c108}\label{motor__driver_8py_af1bc05be6dd1ff8a9fd04145b057c108}} 
+{\bfseries motor\+\_\+driver.\+ext\+\_\+moe} = Motor\+Driver\+Extrude(pin\+B10, pyb.\+Timer(1, freq = 20000), 2, pin\+A7)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver class for the DC motors. 
+
+This file contains methods that will be utilized by the DC motors for the entirety of the quarter. \begin{DoxyAuthor}{Author}
+Cesar Santana 
+
+Jakob Frabosilio 
+
+Ayden Carbaugh 
+\end{DoxyAuthor}

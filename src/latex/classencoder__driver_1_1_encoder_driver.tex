@@ -1,0 +1,103 @@
+\hypertarget{classencoder__driver_1_1_encoder_driver}{}\doxysection{encoder\+\_\+driver.\+Encoder\+Driver Class Reference}
+\label{classencoder__driver_1_1_encoder_driver}\index{encoder\_driver.EncoderDriver@{encoder\_driver.EncoderDriver}}
+
+
+This class impliments an encoder driver for an ME 405 kit.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_a88b0d935948deb06b62d65b26c4b77fc}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_a5c691d3b8aacf1a8d1337c4d337a5745}{pin1}}, \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_a4cda3bd61ec6c1992de20195aecb607e}{pin2}}, \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_aca50ecacecc25bcc8bf146b313ffe04d}{timer}}, \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_a8a387009f76827784972f6fb241f5897}{CPR}})
+\begin{DoxyCompactList}\small\item\em Creates an encoder driver by initializing pins on the shoe and configureing channels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a5369bbc925ecf62940a18b84f55933ee}\label{classencoder__driver_1_1_encoder_driver_a5369bbc925ecf62940a18b84f55933ee}} 
+def {\bfseries read} (self)
+\begin{DoxyCompactList}\small\item\em This method calculates the position of the encoder and accounts for overflow. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_a4e93df09105c0b40a9f8f89d0da3290c}{setpos}} (self, \mbox{\hyperlink{classencoder__driver_1_1_encoder_driver_af7575c2cb895b58f0ef02d51042940dc}{pos}})
+\begin{DoxyCompactList}\small\item\em This methods sets the encoder position to a user inputed value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_aff88d532b9227526eb6ac4c67710a89f}\label{classencoder__driver_1_1_encoder_driver_aff88d532b9227526eb6ac4c67710a89f}} 
+def {\bfseries zero} (self)
+\begin{DoxyCompactList}\small\item\em This methods resets the position of the encoder to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_af7575c2cb895b58f0ef02d51042940dc}\label{classencoder__driver_1_1_encoder_driver_af7575c2cb895b58f0ef02d51042940dc}} 
+{\bfseries pos}
+\begin{DoxyCompactList}\small\item\em Position of the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_ad2681cabb08aa39b7443d63c5e036e51}\label{classencoder__driver_1_1_encoder_driver_ad2681cabb08aa39b7443d63c5e036e51}} 
+{\bfseries delta}
+\begin{DoxyCompactList}\small\item\em Change in position of the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_ac6f74f9a13de5612dbb67f2bc520cb82}\label{classencoder__driver_1_1_encoder_driver_ac6f74f9a13de5612dbb67f2bc520cb82}} 
+{\bfseries start}
+\begin{DoxyCompactList}\small\item\em Starting time of the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_aa20395dd3aa41f4eee5d7a1393a4ce0b}\label{classencoder__driver_1_1_encoder_driver_aa20395dd3aa41f4eee5d7a1393a4ce0b}} 
+{\bfseries stop}
+\begin{DoxyCompactList}\small\item\em Stopping time of the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a5c691d3b8aacf1a8d1337c4d337a5745}\label{classencoder__driver_1_1_encoder_driver_a5c691d3b8aacf1a8d1337c4d337a5745}} 
+{\bfseries pin1}
+\begin{DoxyCompactList}\small\item\em Configures pin1 for the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a4cda3bd61ec6c1992de20195aecb607e}\label{classencoder__driver_1_1_encoder_driver_a4cda3bd61ec6c1992de20195aecb607e}} 
+{\bfseries pin2}
+\begin{DoxyCompactList}\small\item\em Configures pin 2 for the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_aca50ecacecc25bcc8bf146b313ffe04d}\label{classencoder__driver_1_1_encoder_driver_aca50ecacecc25bcc8bf146b313ffe04d}} 
+{\bfseries timer}
+\begin{DoxyCompactList}\small\item\em Configures a timer for the encoder. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a8a387009f76827784972f6fb241f5897}\label{classencoder__driver_1_1_encoder_driver_a8a387009f76827784972f6fb241f5897}} 
+{\bfseries CPR}
+\begin{DoxyCompactList}\small\item\em Sets CPR value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_abd9d743a796279a6b9bb042f98b3def2}\label{classencoder__driver_1_1_encoder_driver_abd9d743a796279a6b9bb042f98b3def2}} 
+{\bfseries ch1}
+\begin{DoxyCompactList}\small\item\em Configures channel 1 to the encoder timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a6e1efb19a1f2eb9c74ae3afe824769ba}\label{classencoder__driver_1_1_encoder_driver_a6e1efb19a1f2eb9c74ae3afe824769ba}} 
+{\bfseries ch2}
+\begin{DoxyCompactList}\small\item\em Configures channel 2 to the encoder timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class impliments an encoder driver for an ME 405 kit. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a88b0d935948deb06b62d65b26c4b77fc}\label{classencoder__driver_1_1_encoder_driver_a88b0d935948deb06b62d65b26c4b77fc}} 
+\index{encoder\_driver.EncoderDriver@{encoder\_driver.EncoderDriver}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!encoder\_driver.EncoderDriver@{encoder\_driver.EncoderDriver}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def encoder\+\_\+driver.\+Encoder\+Driver.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pin1,  }\item[{}]{pin2,  }\item[{}]{timer,  }\item[{}]{CPR }\end{DoxyParamCaption})}
+
+
+
+Creates an encoder driver by initializing pins on the shoe and configureing channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin1} & pin associated with encoder channel A \\
+\hline
+{\em pin2} & pin associated with encioder channel B \\
+\hline
+{\em timer} & timer associated with the encoder \\
+\hline
+{\em CPR} & number of encoder counts per revolution \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classencoder__driver_1_1_encoder_driver_a4e93df09105c0b40a9f8f89d0da3290c}\label{classencoder__driver_1_1_encoder_driver_a4e93df09105c0b40a9f8f89d0da3290c}} 
+\index{encoder\_driver.EncoderDriver@{encoder\_driver.EncoderDriver}!setpos@{setpos}}
+\index{setpos@{setpos}!encoder\_driver.EncoderDriver@{encoder\_driver.EncoderDriver}}
+\doxysubsubsection{\texorpdfstring{setpos()}{setpos()}}
+{\footnotesize\ttfamily def encoder\+\_\+driver.\+Encoder\+Driver.\+setpos (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pos }\end{DoxyParamCaption})}
+
+
+
+This methods sets the encoder position to a user inputed value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Desired encoder position \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{encoder__driver_8py}{encoder\+\_\+driver.\+py}}\end{DoxyCompactItemize}
