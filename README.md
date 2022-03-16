@@ -79,7 +79,7 @@ you need a griddle or other hot-implement. Our team chose the griddle below,
 purchased from Amazon for $27, due to its reasonable price and fast shipping
 time (did I mention this project only took four weeks?).
 
-![griddle](https://github.com/jfrabosi/Term-Project/blob/main/docs/griddle.png)
+![griddle](https://github.com/jfrabosi/Term-Project/blob/main/docs/griddle.PNG)
 
 Figure 6. The griddle
 
@@ -100,7 +100,7 @@ inserts / risers that elevated the support rail above the griddle. The risers
 were printed in PLA and are positioned far enough from the heating element
 to reduce the risk of heat deformation.
 
-![support structure](https://github.com/jfrabosi/Term-Project/blob/main/docs/supportstructure.png)
+![support structure](https://github.com/jfrabosi/Term-Project/blob/main/docs/supportstructure.PNG)
 
 Figure 7. The support structure
 
@@ -119,7 +119,7 @@ syringe for holding batter, an endstop for securing the syringe, a plunger
 mechanism for pushing the batter, a motor and lead screw for creating linear
 dispensing motion, and a PVC tube for moving batter to the nozzle holder.
 
-![extruder](https://github.com/jfrabosi/Term-Project/blob/main/docs/extruder.png)
+![extruder](https://github.com/jfrabosi/Term-Project/blob/main/docs/extruder.PNG)
 
 Figure 8. The extruder mechanism
 
@@ -133,7 +133,7 @@ carrier. The nozzle carrier has two rectangular slots for the two ends of the be
 to slot into, then two L-brackets slip into the same slots and can be tightened
 to fix the belts in position and tension our entire belt system.
 
-![nozzle carrier](https://github.com/jfrabosi/Term-Project/blob/main/docs/nozzlecarrier.png)
+![nozzle carrier](https://github.com/jfrabosi/Term-Project/blob/main/docs/nozzlecarrier.PNG)
 
 Figure 9. The nozzle carrier
 
@@ -143,7 +143,7 @@ one, it is used as a pulley for the transverse motion belt; two, it is used as a
 load-bearing wheel to ride along the wooden support rail; and three, it holds a limit
 switch for the transverse axis. 
 
-![far end stop](https://github.com/jfrabosi/Term-Project/blob/main/docs/farendstop.png)
+![far end stop](https://github.com/jfrabosi/Term-Project/blob/main/docs/farendstop.PNG)
 
 Figure 10. The far end stopper
 
@@ -151,7 +151,7 @@ The other end stop also has multiple uses: one, it holds the transverse axis mot
 which drives the belt mechanism; and two, it interfaces with the power transmission
 block for the rotational motion motor.
 
-![close end stop](https://github.com/jfrabosi/Term-Project/blob/main/docs/closeendstop.png)
+![close end stop](https://github.com/jfrabosi/Term-Project/blob/main/docs/closeendstop.PNG)
 
 Figure 11. The close end stopper
 
@@ -171,7 +171,7 @@ block slotted onto the D-shaft of our high-torque rotational axis motor, and the
 edges of the cube then slotted into a tight-fitting cavity on the close end stopper
 in the previous section.
 
-![transmission system](https://github.com/jfrabosi/Term-Project/blob/main/docs/transmission.png)
+![transmission system](https://github.com/jfrabosi/Term-Project/blob/main/docs/transmission.PNG)
 
 Figure 12. The rotational power transmission system
 
@@ -181,7 +181,7 @@ worst-performing component: after lots of testing, the power transmission cube
 and housing began to show severe signs of wear and produced very large amounts of
 backlash into our system.
 
-![rotational motor housing](https://github.com/jfrabosi/Term-Project/blob/main/docs/rotmotor.png)
+![rotational motor housing](https://github.com/jfrabosi/Term-Project/blob/main/docs/rotmotor.PNG)
 
 Figure 13. The rotational motor and housing
 
@@ -194,7 +194,7 @@ of the aluminum extrusion as part of the far end stopper part. For the rotationa
 axis, we positioned the limit switch at the furthest-right position on the wooden
 support rail, as part of a 3D-printed weight supporter.
 
-![rotational limit switch](https://github.com/jfrabosi/Term-Project/blob/main/docs/rotswitch.png)
+![rotational limit switch](https://github.com/jfrabosi/Term-Project/blob/main/docs/rotswitch.PNG)
 
 Figure 14. The rotational limit switch
 
@@ -211,7 +211,7 @@ the plunger and the syringe housing so it would be activated when the plunger wa
 fully closed (and therefore there was no more batter to dispense). This part was
 resin printed and used an L-bracket to attach to the rail.
 
-![batter limit switch](https://github.com/jfrabosi/Term-Project/blob/main/docs/batswitch.png)
+![batter limit switch](https://github.com/jfrabosi/Term-Project/blob/main/docs/batswitch.PNG)
 
 Figure 15. The batter extrusion limit switch
 
