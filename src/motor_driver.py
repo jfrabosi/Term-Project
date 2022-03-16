@@ -47,8 +47,8 @@ class MotorDriver:
                cycle of the voltage sent to the motor
         '''
         self.en_pin.high()
-        self.in1pin.low() # <-------- FUCK
-        self.in2pin.low() # <-------- FUCK YOU
+        self.in1pin.low() 
+        self.in2pin.low() 
 
         if level > 100:
             self.ch1.pulse_width_percent(100)

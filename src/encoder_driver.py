@@ -1,5 +1,4 @@
 '''!
-
 @file       encoder_driver.py
 @brief      Driver class for quadrature encoders
 @details    This file contains methods that will be
@@ -72,6 +71,11 @@ class EncoderDriver:
         return self.pos
         
     def setpos(self, pos):
+        '''!
+        This methods sets the encoder position to a 
+        user inputed value
+        @param pos Desired encoder position
+        '''
         self.pos = pos
         self.start = abs(self.timer.counter())
         
