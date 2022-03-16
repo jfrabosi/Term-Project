@@ -215,6 +215,22 @@ resin printed and used an L-bracket to attach to the rail.
 
 Figure 15. The batter extrusion limit switch
 
+## SOFTWARE ADDENDUM
+
+Our task diagram and two motor FSMs (radial and transverse) can be seen below.
+
+![task diagram](https://github.com/jfrabosi/Term-Project/blob/main/Images/Task_Diagram.jpg)
+
+Figure 16. Task diagram 
+
+![rad FSM](https://github.com/jfrabosi/Term-Project/blob/main/Images/Rad_MotorFSM.jpg)
+
+Figure 17. Radial motor FSM
+
+![trans FSM](https://github.com/jfrabosi/Term-Project/blob/main/Images/Trans_MotorFSM.jpg)
+
+Figure 18. Transverse motor FSM
+
 
 ## RESULTS
 After assembling the pancake plotter and uploading the code to the Nucleo STM 32,
