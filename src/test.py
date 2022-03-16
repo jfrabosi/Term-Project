@@ -22,16 +22,27 @@ from gcode_convert import carttopolar
 ## Diameter of the transverse motor gear in inches
 moe_diameter = 0.366 
 
+##
 pinC1 = pyb.Pin(pyb.Pin.board.PC1, pyb.Pin.OUT_PP)
+##
 pinA0 = pyb.Pin(pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
+##
 pinA1 = pyb.Pin(pyb.Pin.board.PA1, pyb.Pin.OUT_PP)
+##
 pinA10 = pyb.Pin(pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
+##
 pinB4 = pyb.Pin(pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
+##
 pinB5 = pyb.Pin(pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
+##
 pinA9 = pyb.Pin(pyb.Pin.board.PA9, pyb.Pin.OUT_PP)
+##
 pinA7 = pyb.Pin(pyb.Pin.board.PA7, pyb.Pin.OUT_PP)
+##
 pinA6 = pyb.Pin(pyb.Pin.board.PA6, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
+##
 pinB3 = pyb.Pin(pyb.Pin.board.PB3, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
+##
 pinA8 = pyb.Pin(pyb.Pin.board.PA8, pyb.Pin.IN, pull = pyb.Pin.PULL_DOWN)
 
 ## Creates a transverse motor object
