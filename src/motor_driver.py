@@ -117,5 +117,5 @@ if __name__ == '__main__':
     rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
     ext_moe = MotorDriverExtrude(pinB10, pyb.Timer(1, freq = 20000), 2, pinA7)
     while True:
-        ext_moe.set_duty_cycle(-80)
+        rad_moe.set_duty_cycle(40)
     

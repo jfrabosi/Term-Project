@@ -53,7 +53,7 @@ def carttopolar():
     d = 6.04
     ## distance between point of rotation and nozzle
     t = 1.89
-    with open('toolpath.nc') as file:
+    with open('toolpathcal.nc') as file:
         content = file.readlines()
         for column in content:
             content = column.split(',')
@@ -109,6 +109,7 @@ def carttopolar():
             r = ( (xlist[i]**2)+((ylist[i] + d)**2)-(t**2) )**(0.5)
             rlist.append(r)
         return [zlist, rlist, thetalist]
-        
+#         print(rlist)
+#         print(thetalist)
 if __name__ == "__main__":
     carttopolar()

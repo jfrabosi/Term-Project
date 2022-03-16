@@ -29,13 +29,13 @@ rad_moe = MotorDriver(pinA10, pinB4, pinB5, pyb.Timer(3, freq = 20000))
 ext_moe = MotorDriverExtrude(pinA9, pyb.Timer(1, freq = 20000), 2, pinA7)
 
 trans_enc = EncoderDriver(pyb.Pin.cpu.C6, pyb.Pin.cpu.C7, pyb.Timer(8, prescaler = 0, period = 65535), CPR = 8192*360/((22/7)*moe_diameter))
-trans_con = PID(7, 45, 0, 0)
+trans_con = PID(4, 35 , 0, 0)
 
 rad_enc = EncoderDriver(pyb.Pin.cpu.B6, pyb.Pin.cpu.B7, pyb.Timer(4, prescaler = 0, period = 65535), CPR = 7122)
-rad_con = PID(5.5, 45, 0, 0)
+rad_con = PID(4, 35, 0, 0)
 
 ext_enc = EncoderDriver(pyb.Pin.cpu.A2, pyb.Pin.cpu.A3, pyb.Timer(2, prescaler = 0, period = 65535), CPR = 14254)
-ext_con = PID(5.5, 45, 0, 0)
+ext_con = PID(4, 45, 0, 0)
 
 radSwitch = LimitSwitch(pinA6)
 transSwitch = LimitSwitch(pinB3)
@@ -71,7 +71,7 @@ def radial_motor():
     step_time = 0
     error = 10
     while abs(error) >= 5:
-        rad_con.ref(20)
+        rad_con.ref(25)
         start_time = utime.ticks_ms()
         utime.sleep_ms(10)
         pos = rad_enc.read()
@@ -86,7 +86,7 @@ def radial_motor():
     print('not!')
     rad_moe.set_duty_cycle(0)
     radFlag.put(1)
-    rad_enc.setpos(-62)
+    rad_enc.setpos(-60)
     pos = trans_enc.read()
     while not transFlag.get():
         rad_moe.set_duty_cycle(1)
@@ -132,7 +132,7 @@ def radial_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = rad_con.compute(pos, step_time/1000, save_data=False)
-                    rad_moe.set_duty_cycle(100)
+                    rad_moe.set_duty_cycle(70)
                 elif error < 0:
                     rad_con.ref(radial[idx])
                     start_time = utime.ticks_ms()
@@ -141,7 +141,7 @@ def radial_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = rad_con.compute(pos, step_time/1000, save_data=False)
-                    rad_moe.set_duty_cycle(-100)
+                    rad_moe.set_duty_cycle(-70)
                 yield (0)
             rad_moe.set_duty_cycle(0)
             error = 10
@@ -222,7 +222,7 @@ def transverse_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = trans_con.compute(pos, step_time/1000, save_data=False)
-                    trans_moe.set_duty_cycle(-100)
+                    trans_moe.set_duty_cycle(-70)
                 elif error < 0:
                     trans_con.ref(transverse[idx])
                     start_time = utime.ticks_ms()
@@ -231,7 +231,7 @@ def transverse_motor():
                     stop_time = utime.ticks_ms()
                     step_time = utime.ticks_diff(stop_time, start_time)
                     error = trans_con.compute(pos, step_time/1000, save_data=False)
-                    trans_moe.set_duty_cycle(100)
+                    trans_moe.set_duty_cycle(70)
                 yield(0)
             trans_moe.set_duty_cycle(0)
             error = 10
@@ -288,6 +288,7 @@ if __name__ == "__main__":
      radial = dataList[2]
      transverse = dataList[1]
      extrusion = dataList[0]
+     print(transverse)
      
      radSwitchFlag = Share('h', thread_protect = False, name = "radSwitchFlag")
      transSwitchFlag = Share('h', thread_protect = False, name = "transSwitchFlag")
@@ -297,9 +298,9 @@ if __name__ == "__main__":
      extFlag = Share('h', thread_protect = False, name = "extFlag")
      index = Share('h', thread_protect = False, name = "index")
      
-     task_0 = cotask.Task(radial_motor, name = 'Task_0', priority = 1, period = 10, profile=True, trace=False)
-     task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 1, period = 10, profile=True, trace=False)
-     task_2 = cotask.Task(extrusion_motor, name = 'Task_2', priority = 1, period = 10, profile=True, trace=False)
+     task_0 = cotask.Task(radial_motor, name = 'Task_0', priority = 3, period = 10, profile=True, trace=False)
+     task_1 = cotask.Task(transverse_motor, name = 'Task_1', priority = 3, period = 10, profile=True, trace=False)
+     task_2 = cotask.Task(extrusion_motor, name = 'Task_2', priority = 3, period = 10, profile=True, trace=False)
      task_3 = cotask.Task(radial_switch, name = 'Task 3', priority = 2, period = 10, profile=True, trace=False)
      task_4 = cotask.Task(transverse_switch, name = 'Task 4', priority = 2, period = 10, profile=True, trace=False)
      task_5 = cotask.Task(extrusion_switch, name = 'Task 5', priority = 2, period = 10, profile=True, trace=False)
