@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['closedloop_0',['ClosedLoop',['../class_t_p___closed_loop_1_1_closed_loop.html',1,'TP_ClosedLoop']]]
+  ['encoderdriver_0',['EncoderDriver',['../classencoder__driver_1_1_encoder_driver.html',1,'encoder_driver']]]
 ];

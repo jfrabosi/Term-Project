@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['measvals_0',['measVals',['../class_t_p___closed_loop_1_1_closed_loop.html#af507a9f730cce71e4af911e4e9a2d018',1,'TP_ClosedLoop::ClosedLoop']]]
+  ['name_0',['name',['../classcotask_1_1_task.html#ab54e069dd0b4f0a2f8e7f00c94998a10',1,'cotask::Task']]]
 ];

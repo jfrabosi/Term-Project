@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: My Project</title>
+<title>Term Project - ME 405, Tub 4: Term Project - ME 405, Tub 4</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Term Project - ME 405, Tub 4
    </div>
+   <div id="projectbrief">Pancake Plotter</div>
   </td>
  </tr>
  </tbody>
@@ -62,100 +63,10 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">My Project </div></div>
+  <div class="headertitle"><div class="title">Term Project - ME 405, Tub 4 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="sec_1"></a>
-HARDWARE DESIGN</h1>
-<p >This section describes the mechanisms, mechanical design, and manufacturing techniques for each component of our 2.5D plotter. Each subsection below describes a different component of the design, explaining how and why we made the decisions that we did.</p>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md0"></a>
-GENERAL IDEA</h2>
-<p >Our interpretation of a 2.5D plotter is a pancake plotter: a mechanism that can convert G-Code of an image to carefully-positioned pancake batter deposited onto a hot griddle, ideally making a pancake in the shape of the chosen image.</p>
-<p >Our team plans to accomplish this using three axes of motion: one rotational, one transverse, and one also-transverse-but-it's-for-dispensing-batter. The finished mechanism almost resembles a windshield wiper with a nozzle that moves along the length of the blade, allowing us to cover a wide area with two motors. A third motor will dispense the batter using a lead screw for precise depositing. A GIF of the mechanism can be seen below.</p>
-<h2><a class="anchor" id="autotoc_md1"></a>
-FULL MECH GIF</h2>
-<p >It should be noted that the rotational-transverse design is a challenge: surely a Cartesian (X-Y) plotter would be simpler. But hey, we're Cal Poly MEs; we can take the challenge.</p>
-<p >A Bill of Materials (BOM) can be found at the end of this section, listing names, suppliers, quantities, and costs for each purchased or designed item.</p>
-<p >Additionally, all CAD files can be found in the /docs/SOLIDWORKS directory of this repository.</p>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md2"></a>
-GRIDDLE</h2>
-<p >This is the most straight-forward component. In order to make pancakes, you need a griddle or other hot-implement. Our team chose the griddle below, purchased from Amazon for $27, due to its reasonable price and fast shipping time (did I mention this project only took four weeks?).</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
-GRIDDLE IMAGE</h2>
-<p >There's really not much else for this one. It's a griddle.</p>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md4"></a>
-SUPPORT STRUCTURE</h2>
-<p >In order to effectively position and control our motors, our design first needed a support structure. We designed the base of the support structure from aluminum extrusions due to their versatility (used for both the supports and the actuating rail!), low cost, and fast shipping. Our team purchased L-shaped brackets that fit within the extrusion rails for securing multiple components to the support structure - these brackets were used in almost every component of the design. We were able to laser-cut a piece of plywood to create our support rail that the mechanism rests and slides on in our on-campus machine shops. Lastly, we designed and 3D-printed some inserts / risers that elevated the support rail above the griddle. The risers were printed in PLA and are positioned far enough from the heating element to reduce the risk of heat deformation.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-SUPPORT STRUCTURE IMAGE</h2>
-<p >Purchasing aluminum extrusions and L-brackets, laser-cutting the plywood on-campus, and 3D-printing the risers allowed us to keep costs low, reduced our manufacturing time (as opposed to machining metal), and allowed for rapid prototyping and design changes (of which there were many)!</p>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md6"></a>
-BATTER DISPENSER</h2>
-<p >Time for moving parts!</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-BATTER DISPENSER GIF</h2>
-<p >This component is the "0.5" axis of our 2.5 axis plotter. It dispenses batter at a constant rate when told to by the microcontroller, and is made up of a syringe for holding batter, an endstop for securing the syringe, a plunger mechanism for pushing the batter, a motor and lead screw for creating linear dispensing motion, and a PVC tube for moving batter to the nozzle holder.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
-LABELED DISPENSER IMAGE</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md9"></a>
-TRANSVERSE MOTION</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md10"></a>
-ROTATIONAL MOTION</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md11"></a>
-LIMIT SWITCHES AND "ZEROING"</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md12"></a>
-ELECTRONICS HOUSING</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md13"></a>
-BILL OF MATERIALS</h2>
-<h1><a class="anchor" id="sec_2"></a>
-SOFTWARE DESIGN</h1>
-<p >This section will cover the tasks that we plan on utilizing for our 2.5 axis machine. The main taks that we will need include a G-Code task thatconverts G-code into usable coordinates, a radial motor task, a transverse motor task, and a syringe motor task. The task diagram below shows how we plan on implimenting these tasks into our design through the use of queue and share objects. each task will be discussed more i depth in the following sections.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
-Include picture of task diagram</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md15"></a>
-G-CODE TASK</h2>
-<p >The G-Code task will be responsible for the conversion a G-Code into coordinates that can be used by our machine. This will be accomplished by first converting the G-Code file into cartesian coordinates through the use of splicing and appending. These will then be converted to polar coordinates using conversion formulas. The radial and transverese coordinates will then be split into seperate quees and then sent off to the appropiaate motor task.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
-FSM?</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md17"></a>
-RADIAL MOTOR TASK</h2>
-<p >The radial motor task will be responsible for the radial motion of our nozzle. This task will function by taking the radial coordinates from the G-Code task and using these values as refernece point for a controller object. The output of the controller will then be used to apply a duty cycle to the radial motor. Since we will be utilizing the encoder to measure position, it will be important to convert the rotational motion of the encoder to a linear distance that we can compare the radial coordinates against. Once the desired coordinate is reached, a flag variable will be sent out to the syringe motor task indicating it is ready for pancake mix to be dispersed.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
-FSM?</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md19"></a>
-TRANSVERSE MOTOR TASK</h2>
-<p >The transverse motor task will be responsible for the transverse motion of our nozzle. This task will function by taking the transverse coorinates coordinates from the G-Code task and using these values as reference points for a controller object. The output of the controller object will then be used to apply a duty cycle toi the transverse motor. Since we will be using the encoders to measure position, we need to make sure that the encoder reads degrees and not ticks. Once the desired coordinate is reached, a flag variable will be sent out to the syringe motor task indicating it is ready for pancake mix to be dispersed.</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
-FSM?</h2>
-<h2><a class="anchor" id=""></a>
-</h2>
-<h2><a class="anchor" id="autotoc_md21"></a>
-SYRINGE MOTOR TASK</h2>
-<p >The syringe motor task will be responsible for the dispersion of the pancake mixture. </p>
+<div class="textblock"><p >@scetion sec_1 SOFTWARE OVERVIEW This section will cover the various drivers used in our system as well as what tasks they were utilized in. The tasks themselves be discussed in a later section. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
