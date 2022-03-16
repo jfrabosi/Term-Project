@@ -70,7 +70,7 @@
                 objects. each task will be discussed more in depth in the following 
                 sections.
                 
-                ![](Task_Diagram.jpg)
+                ![task diagram](https://github.com/jfrabosi/Term-Project/blob/main/Images/Task_Diagram.jpg)
                 
 @subsection 2s1
                 ##RADIAL LIMIT SWITCH TASK
@@ -123,7 +123,7 @@
                 the aforementioned flag variables to make sure that each motor has
                 reached its appropriate index value.
                 
-                ![](Rad_MotorFSM.jpg)
+                ![rad FSM](https://github.com/jfrabosi/Term-Project/blob/main/Images/Rad_MotorFSM.jpg)
                 
 @subsection 2s5
                 ##TRANSVERSE MOTOR TASK
@@ -142,7 +142,7 @@
                 value the flag variables are updated and they move onto the next value
                 in their respective lists.
 
-                ![](Trans_MotorFSM.jpg)
+                ![trans FSM](https://github.com/jfrabosi/Term-Project/blob/main/Images/Trans_MotorFSM.jpg)
                 
 @subsection 2s6
                 ##EXTRUSION MOTOR TASK
