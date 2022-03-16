@@ -148,7 +148,20 @@
                 ##EXTRUSION MOTOR TASK
                 The extrusion motor task will be responsible for the actuation of
                 syringe that will dispense our pancake batter onto the plotting
-                surface.
+                surface. The task stats by first moving the motor to make sure that
+                no pressure is being applied on the syringe. Once this is done, the
+                task begins going through its list of actuation values. This list 
+                simply contains 0's and 1's, a one indicating to extrude batter. In order
+                to make sure that batter is only extruded once the radial and transverse
+                motor tasks have rached their proper locations, a shared index variable
+                is used. This variable is sent to the extrusion task after both the
+                radial and transverse motor tasks have reached their location, and it 
+                ensures that all three tasks are operating on the same index, and thus
+                batter is only being extruded at the proper locations. Since the
+                syringe we are using only holds 150 ml of batter, we used positional
+                control to ensure that once the syringe has been supressed 150 ml,
+                the motor will stop. We also used a constant feed rate for our 
+                extrusion motor.
 
 '''
 
