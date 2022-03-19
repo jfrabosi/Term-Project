@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Term Project - ME 405, Tub 4: Term Project - ME 405, Tub 4</title>
+<title>Term Project - ME 405-03, Tub 4: Term Project - ME 405-03, Tub 4</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Term Project - ME 405, Tub 4
+   <div id="projectname">Term Project - ME 405-03, Tub 4
    </div>
    <div id="projectbrief">Pancake Plotter</div>
   </td>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Term Project - ME 405, Tub 4 </div></div>
+  <div class="headertitle"><div class="title">Term Project - ME 405-03, Tub 4 </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="sec_1"></a>
@@ -102,7 +102,7 @@ TASK_SHARE &amp; COTASK</h2>
 <h1><a class="anchor" id="sec_2"></a>
 TASK STRUCTURE</h1>
 <p >This section will cover the tasks that we plan on utilizing for our 2.5 axis machine. The main taks that we will need include a G-Code task thatconverts G-code into usable coordinates, a radial motor task, a transverse motor task, and a syringe motor task. The task diagram below shows how we plan on implimenting these tasks into our design through the use of share objects. each task will be discussed more in depth in the following sections.</p>
-<p ><img src="Task_Diagram.jpg" alt="" class="inline"/></p>
+<p ><img src="https://github.com/jfrabosi/Term-Project/blob/main/Images/Task_Diagram.jpg" alt="task diagram" class="inline"/></p>
 <h2><a class="anchor" id=""></a>
 </h2>
 <h2><a class="anchor" id="autotoc_md6"></a>
@@ -123,13 +123,13 @@ EXTRUSION LIMIT SWITCH TASK</h2>
 <h2><a class="anchor" id="autotoc_md9"></a>
 RADIAL MOTOR TASK</h2>
 <p >The radial motor task will be responsible for the radial motion of our nozzle. In order to accomplish this the radial motion will first locate itself using the limit switch located on its path. When the task first runs the radial motor will move the arm slightly away from, and then towards the limit switch until it makes contact with it. Once the arm makes contact with the limit switch, the position of the encoder is updated to correspond with the the position of the limit switch. It will also wait for the transverese motor to make contact with its limit switch before proceeding. This will all be done in the initialization state S0 shown in the FSM below. Once contact with the radial and transverse limit switches has been made, the flag variables for each of those motors will be changed to one, and thus the task will transition into the next state S1, which is locating the radial coordinates. In this state, the task will make its way through a provided list of coordinates using a PI controller for positional control in order to get as colse to the desired value as it can. A constant duty cycle will be applied to the motor as it moves from index to index. In case the radial motor reaches its desired index value before the transverse motor, it will enter an idler state, S2, where it will wait for the trnasverse motor to reach its index value before continuing. This state also uses the aforementioned flag variables to make sure that each motor has reached its appropriate index value.</p>
-<p ><img src="Rad_MotorFSM.jpg" alt="" class="inline"/></p>
+<p ><img src="https://github.com/jfrabosi/Term-Project/blob/main/Images/Rad_MotorFSM.jpg" alt="rad FSM" class="inline"/></p>
 <h2><a class="anchor" id=""></a>
 </h2>
 <h2><a class="anchor" id="autotoc_md10"></a>
 TRANSVERSE MOTOR TASK</h2>
 <p >The transverse motor task will be responsible for the transverse motion of our nozzle, and is very similar in functionality to the radial motor task. The task begins by locating itself in the initialization state S0 in the same manner as the radial motor task, the only difference being that this task is also responsible for updating the flag variable for the extrusion task so that it can begin its cycle. After the task has gone through the initialization state, it moves onto S1, locating coordinates. In the same manner as the radial motor task, this tak also has its own list that it iterates through using positional control to get as close to the desired values as it possibly can. This task also contains an idler state in case it reaches its index value before the radial motor task. Once both tasks reach their index value the flag variables are updated and they move onto the next value in their respective lists.</p>
-<p ><img src="Trans_MotorFSM.jpg" alt="" class="inline"/></p>
+<p ><img src="https://github.com/jfrabosi/Term-Project/blob/main/Images/Trans_MotorFSM.jpg" alt="trans FSM" class="inline"/></p>
 <h2><a class="anchor" id=""></a>
 </h2>
 <h2><a class="anchor" id="autotoc_md11"></a>
