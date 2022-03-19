@@ -1,7 +1,7 @@
 '''!
-@file       
-@brief      
-@details    
+@file       test.py
+@brief      This script runs runs a 2.5 axis plotter
+@details    This script utilizes multitasking to operate a 2.5 axis plotter
 @author     Jakob Frabosilio 
 @author     Ayden Carbaugh 
 @author     Cesar Santana

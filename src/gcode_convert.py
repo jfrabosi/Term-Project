@@ -1,5 +1,5 @@
 '''!
-@file       gcode converter.py
+@file       gcode_convert.py
 @brief      This file contains the code for converting gcode to polar coordinates
 @details    This script opens a .nc file and creates 3 seperate lists of cartesian
             coordinates which are then converted to polar coordinates
